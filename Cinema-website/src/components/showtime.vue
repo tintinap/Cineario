@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container" style="background: #000">
     <div class="row">
       <div class="col-md-2"></div>
-      <div class="col-md-3"><img src="assets/escape-room.jpg"></div>
-      <div class="col-md-6"></div>
+      <div class="col-md-3"><img src="@/assets/escape-room.jpg" width="100%" height="auto"></div>
+      <div class="col-md-6"><h1>Title</h1></div>
       <div class="col-md-2"></div>
     </div>
   </div>
