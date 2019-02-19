@@ -1,0 +1,603 @@
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+        integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-yellow-brown">
+        <a style="color: #ebe4e2" class="navbar-brand hidden" href="#">Navbar</a>
+    </nav>
+
+    <nav style="margin-top: -5px;"
+        class="navbar navbar-expand-sm navbar-light bg-yellow-brown sticky-top p-verticalfull">
+        <a class="navbar-brand ml-2" href="#"><b>WebName</b></a>
+        <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
+                <li class="nav-item" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">Movie</a>
+                </li>
+                <li class="nav-item" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">Cinemas</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+            <a style="font-size: 12px" class="nav-item my-2 link" href="#"><i style="color:#191919!important"
+                    class="fas fa-sign-in-alt"></i> Sign-in/Sign-up</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done">Order Processing</li>
+            <li class="progtrckr-done">Pre-Production</li>
+            <li class="progtrckr-todo">In Production</li>
+        </ol>
+    </div>
+
+    <div class="container" style="background: #f9f9f9;">
+            <div class="row p-4 mt-1">
+                <div class="col-md-3">
+                    <img src="escape-room.jpg" width="100%" style="box-shadow: 0 15px 37px -5px rgba(54,70,97,.4);">
+                </div>
+                <div class="col-md-9 mt-5">
+                    <h2>Escape Room กักห้อง เกมโหด</h2>
+                    <div style="margin-top: 1.5em;margin-bottom: 1.5em;">
+                        <button class="btn btn-outline-dark active" type="button" data-toggle="collapse"
+                        data-target="#main" aria-expanded="true"
+                        aria-controls="main">หน้าหลัก</button>
+                        <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
+                            data-target="#sysnopsis" aria-expanded="false"
+                            aria-controls="sysnopsis">รายละเอียดภาพยนตร์</button>
+                        <button class="btn btn-outline-dark" type="button">ตัวอย่างภาพยนตร์</button>
+                    </div>
+                    <!-- Collapse -->
+                    <div class="collapse show " id="main" style="background: #f9f9f9;">
+                        <p>Category: Horror</p>
+                        <p>Rate: 15 | Time: 100 mins</p>
+                    </div>
+                    <div class="collapse" id="sysnopsis" style="background: #f9f9f9;">
+                        <p>เรื่องราวของคนแปลกหน้า 6 คน ที่เข้าร่วมเล่นเกมปริศนาและพบว่าตัวเองอยู่ในห้องที่เต็มไปด้วยสถานการณ์สุดอันตรายทุกคนจะต้องใช้ไหวพริบของตัวเองในการหาคำใบ้เพื่อออกจากห้องนี้ไปยังห้องต่อไปและเอาชนะเกมนี้ให้ได้</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+ 
+    <div class="container" style="margin-top: 1em;">
+        <input type="text" class="form-control mt-4 mb-4" placeholder="ค้นหาโรงภาพยนตร์">
+    
+        <div class="card">
+            <h5 class="card-header bg-dark text-white">Seacon Cineplex</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-1" style="border-right: 1px solid #000;">TH</div>
+                    <div class="col-7">
+                        <button type="button" class="btn btn-outline-secondary">10:00</button>
+                        <button type="button" class="btn btn-outline-secondary">11:30</button>
+                        <button type="button" class="btn btn-outline-secondary">13:30</button>
+                        <button type="button" class="btn btn-outline-secondary">16:15</button>
+                        <button type="button" class="btn btn-outline-secondary">18:00</button>
+                        <button type="button" class="btn btn-outline-secondary">20:20</button>
+                        <button type="button" class="btn btn-outline-secondary">22:00</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
+                    <div class="col-7">
+                        <button type="button" class="btn btn-outline-secondary">13:30</button>
+                        <button type="button" class="btn btn-outline-secondary">16:15</button>
+                        <button type="button" class="btn btn-outline-secondary">22:00</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+                <h5 class="card-header bg-dark text-white">Mega Cineplex</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">TH</div>
+                        <div class="col-7">
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">16:15</button>
+                            <button type="button" class="btn btn-outline-secondary">18:00</button>
+                            <button type="button" class="btn btn-outline-secondary">20:20</button>
+                            <button type="button" class="btn btn-outline-secondary">22:00</button>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
+                        <div class="col-7">
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">20:20</button>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer mt-auto py-3">
+        <div class=" p-sidefull container-fluid ">
+            <div class="footer bg-yellow-brown ">
+                <div class="row ">
+                    <div class=" col-md-4 p-5 ">
+                        <img class="footer-logo d-flex justify-content-between " src="logo.png " alt=" ">
+                    </div>
+                    <div class="col-md-4 p-5 text-center ">
+                        <div class="row social-media d-flex justify-content-center ">
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-instagram link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-facebook-square link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-twitter link-reverse "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 pt-4 pb-5 px-5 ">
+                        <div class="row d-flex justify-content-end social-media ">
+                            Web-Name Cinema
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">Contact our support</a>
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">About us</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Scroll to the very bottom to see the stuff we wrote, the big giant blocks are:
+// froogaloop
+// and
+// fitvid.js
+
+;(function( $ ){
+
+'use strict';
+
+$.fn.fitVids = function( options ) {
+  var settings = {
+    customSelector: null,
+    ignore: null
+  };
+
+  if(!document.getElementById('fit-vids-style')) {
+    // appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
+    var div = document.createElement("div");
+    div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
+    head.appendChild(div.childNodes[1]);
+  }
+
+  if ( options ) {
+    $.extend( settings, options );
+  }
+
+  return this.each(function(){
+    var selectors = [
+      'iframe[src*="player.vimeo.com"]',
+      'iframe[src*="youtube.com"]',
+      'iframe[src*="youtube-nocookie.com"]',
+      'iframe[src*="kickstarter.com"][src*="video.html"]',
+      'object',
+      'embed'
+    ];
+
+    if (settings.customSelector) {
+      selectors.push(settings.customSelector);
+    }
+
+    var ignoreList = '.fitvidsignore';
+
+    if(settings.ignore) {
+      ignoreList = ignoreList + ', ' + settings.ignore;
+    }
+
+    var $allVideos = $(this).find(selectors.join(','));
+    $allVideos = $allVideos.not('object object'); // SwfObj conflict patch
+    $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
+
+    $allVideos.each(function(count){
+      var $this = $(this);
+      if($this.parents(ignoreList).length > 0) {
+        return; // Disable FitVids on this video.
+      }
+      if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
+      if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
+      {
+        $this.attr('height', 9);
+        $this.attr('width', 16);
+      }
+      var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
+          width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
+          aspectRatio = height / width;
+      if(!$this.attr('id')){
+        var videoID = 'fitvid' + count;
+        $this.attr('id', videoID);
+      }
+      $this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+'%');
+      $this.removeAttr('height').removeAttr('width');
+    });
+  });
+};
+// Works with either jQuery or Zepto
+})( window.jQuery || window.Zepto );
+
+// Init style shamelessly stolen from jQuery https://jquery.com
+var Froogaloop = (function(){
+  // Define a local copy of Froogaloop
+  function Froogaloop(iframe) {
+      // The Froogaloop object is actually just the init constructor
+      return new Froogaloop.fn.init(iframe);
+  }
+
+  var eventCallbacks = {},
+      hasWindowEvent = false,
+      isReady = false,
+      slice = Array.prototype.slice,
+      playerDomain = '';
+
+  Froogaloop.fn = Froogaloop.prototype = {
+      element: null,
+
+      init: function(iframe) {
+          if (typeof iframe === "string") {
+              iframe = document.getElementById(iframe);
+          }
+
+          this.element = iframe;
+
+          // Register message event listeners
+          playerDomain = getDomainFromUrl(this.element.getAttribute('src'));
+
+          return this;
+      },
+
+      /*
+       * Calls a function to act upon the player.
+       *
+       * @param {string} method The name of the Javascript API method to call. Eg: 'play'.
+       * @param {Array|Function} valueOrCallback params Array of parameters to pass when calling an API method
+       *                                or callback function when the method returns a value.
+       */
+      api: function(method, valueOrCallback) {
+          if (!this.element || !method) {
+              return false;
+          }
+
+          var self = this,
+              element = self.element,
+              target_id = element.id !== '' ? element.id : null,
+              params = !isFunction(valueOrCallback) ? valueOrCallback : null,
+              callback = isFunction(valueOrCallback) ? valueOrCallback : null;
+
+          // Store the callback for get functions
+          if (callback) {
+              storeCallback(method, callback, target_id);
+          }
+
+          postMessage(method, params, element);
+          return self;
+      },
+
+      /*
+       * Registers an event listener and a callback function that gets called when the event fires.
+       *
+       * @param eventName (String): Name of the event to listen for.
+       * @param callback (Function): Function that should be called when the event fires.
+       */
+      addEvent: function(eventName, callback) {
+          if (!this.element) {
+              return false;
+          }
+
+          var self = this,
+              element = self.element,
+              target_id = element.id !== '' ? element.id : null;
+
+
+          storeCallback(eventName, callback, target_id);
+
+          // The ready event is not registered via postMessage. It fires regardless.
+          if (eventName != 'ready') {
+              postMessage('addEventListener', eventName, element);
+          }
+          else if (eventName == 'ready' && isReady) {
+              callback.call(null, target_id);
+          }
+
+          return self;
+      },
+
+      /*
+       * Unregisters an event listener that gets called when the event fires.
+       *
+       * @param eventName (String): Name of the event to stop listening for.
+       */
+      removeEvent: function(eventName) {
+          if (!this.element) {
+              return false;
+          }
+
+          var self = this,
+              element = self.element,
+              target_id = element.id !== '' ? element.id : null,
+              removed = removeCallback(eventName, target_id);
+
+          // The ready event is not registered
+          if (eventName != 'ready' && removed) {
+              postMessage('removeEventListener', eventName, element);
+          }
+      }
+  };
+
+  /**
+   * Handles posting a message to the parent window.
+   *
+   * @param method (String): name of the method to call inside the player. For api calls
+   * this is the name of the api method (api_play or api_pause) while for events this method
+   * is api_addEventListener.
+   * @param params (Object or Array): List of parameters to submit to the method. Can be either
+   * a single param or an array list of parameters.
+   * @param target (HTMLElement): Target iframe to post the message to.
+   */
+  function postMessage(method, params, target) {
+      if (!target.contentWindow.postMessage) {
+          return false;
+      }
+
+      var url = target.getAttribute('src').split('?')[0],
+          data = JSON.stringify({
+              method: method,
+              value: params
+          });
+
+      if (url.substr(0, 2) === '//') {
+          url = window.location.protocol + url;
+      }
+
+      target.contentWindow.postMessage(data, url);
+  }
+
+  /**
+   * Event that fires whenever the window receives a message from its parent
+   * via window.postMessage.
+   */
+  function onMessageReceived(event) {
+      var data, method;
+
+      try {
+          data = JSON.parse(event.data);
+          method = data.event || data.method;
+      }
+      catch(e)  {
+          //fail silently... like a ninja!
+      }
+
+      if (method == 'ready' && !isReady) {
+          isReady = true;
+      }
+
+      // Handles messages from moogaloop only
+      if (event.origin != playerDomain) {
+          return false;
+      }
+
+      var value = data.value,
+          eventData = data.data,
+          target_id = target_id === '' ? null : data.player_id,
+
+          callback = getCallback(method, target_id),
+          params = [];
+
+      if (!callback) {
+          return false;
+      }
+
+      if (value !== undefined) {
+          params.push(value);
+      }
+
+      if (eventData) {
+          params.push(eventData);
+      }
+
+      if (target_id) {
+          params.push(target_id);
+      }
+
+      return params.length > 0 ? callback.apply(null, params) : callback.call();
+  }
+
+
+  /**
+   * Stores submitted callbacks for each iframe being tracked and each
+   * event for that iframe.
+   *
+   * @param eventName (String): Name of the event. Eg. api_onPlay
+   * @param callback (Function): Function that should get executed when the
+   * event is fired.
+   * @param target_id (String) [Optional]: If handling more than one iframe then
+   * it stores the different callbacks for different iframes based on the iframe's
+   * id.
+   */
+  function storeCallback(eventName, callback, target_id) {
+      if (target_id) {
+          if (!eventCallbacks[target_id]) {
+              eventCallbacks[target_id] = {};
+          }
+          eventCallbacks[target_id][eventName] = callback;
+      }
+      else {
+          eventCallbacks[eventName] = callback;
+      }
+  }
+
+  /**
+   * Retrieves stored callbacks.
+   */
+  function getCallback(eventName, target_id) {
+      if (target_id) {
+          return eventCallbacks[target_id][eventName];
+      }
+      else {
+          return eventCallbacks[eventName];
+      }
+  }
+
+  function removeCallback(eventName, target_id) {
+      if (target_id && eventCallbacks[target_id]) {
+          if (!eventCallbacks[target_id][eventName]) {
+              return false;
+          }
+          eventCallbacks[target_id][eventName] = null;
+      }
+      else {
+          if (!eventCallbacks[eventName]) {
+              return false;
+          }
+          eventCallbacks[eventName] = null;
+      }
+
+      return true;
+  }
+
+  /**
+   * Returns a domain's root domain.
+   * Eg. returns https://vimeo.com when https://vimeo.com/channels is sbumitted
+   *
+   * @param url (String): Url to test against.
+   * @return url (String): Root domain of submitted url
+   */
+  function getDomainFromUrl(url) {
+      if (url.substr(0, 2) === '//') {
+          url = window.location.protocol + url;
+      }
+
+      var url_pieces = url.split('/'),
+          domain_str = '';
+
+      for(var i = 0, length = url_pieces.length; i < length; i++) {
+          if(i<3) {domain_str += url_pieces[i];}
+          else {break;}
+          if(i<2) {domain_str += '/';}
+      }
+
+      return domain_str;
+  }
+
+  function isFunction(obj) {
+      return !!(obj && obj.constructor && obj.call && obj.apply);
+  }
+
+  function isArray(obj) {
+      return toString.call(obj) === '[object Array]';
+  }
+
+  // Give the init function the Froogaloop prototype for later instantiation
+  Froogaloop.fn.init.prototype = Froogaloop.fn;
+
+  // Listens for the message event.
+  // W3C
+  if (window.addEventListener) {
+      window.addEventListener('message', onMessageReceived, false);
+  }
+  // IE
+  else {
+      window.attachEvent('onmessage', onMessageReceived);
+  }
+
+  // Expose froogaloop to the global object
+  return (window.Froogaloop = window.$f = Froogaloop);
+
+})();
+
+
+
+////////////////////////////////////////
+// Our Script 
+////////////////////////////////////////
+$(document).ready(function(){
+// Initiate FitVid.js
+$(".video-container").fitVids();
+
+// Iframe/player variables
+var iframe = $('#video')[0];
+var player = $f(iframe);
+
+// Open on play
+$('.play').click(function(){
+  $('.overlay').css('left', 0)
+  $('.overlay').addClass('show')
+  player.api("play");
+})
+
+// Closes on click outside
+$('.overlay').click(function(){
+  $('.overlay').removeClass('show')
+  setTimeout(function() {
+    $('.overlay').css('left', '-100%')
+  }, 300);
+  player.api("pause");
+})
+});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+        integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
