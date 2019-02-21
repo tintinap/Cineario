@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Select Seat | Web Cinema</title>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -55,14 +55,14 @@
     <div class="container d-flex flex-row justify-content-center mt-5 mb-3">
         <div class="d-flex flex-row justify-content-center">
             <div class="process-box mr-5">
-                <div class="process active" id="process1">1</div>
+                <div class="process" id="process1">1</div>
                 <label for="process1">หน้าแรก</lable>
             </div>
             <div class="process-box mr-5">
                 <i class="fas fa-angle-right fa-3x"></i>
             </div>
             <div class="process-box  mr-5">
-                <div class="process" id="process2">2</div>
+                <div class="process active" id="process2">2</div>
                 <label for="process2">เลือกที่นั่ง</lable>
             </div>
             <div class="process-box mr-5">
@@ -90,89 +90,175 @@
                 <div class="col-md-9 mt-5">
                     <h2>Escape Room กักห้อง เกมโหด</h2>
                     <div style="margin-top: 1.5em;margin-bottom: 1.5em;">
-                        <button class="btn btn-outline-dark active" type="button" data-toggle="collapse"
-                        data-target="#main" aria-expanded="true"
-                        aria-controls="main">หน้าหลัก</button>
-                        <button class="btn btn-outline-dark" type="button" data-toggle="collapse"
-                            data-target="#sysnopsis" aria-expanded="false"
-                            aria-controls="sysnopsis">รายละเอียดภาพยนตร์</button>
-                        <button class="btn btn-outline-dark" type="button">ตัวอย่างภาพยนตร์</button>
+                        <h5><i class="far fa-calendar-alt"></i> 21 February 2019 | <i class="far fa-clock"></i> 10.00</h5>
+                        <br>
+                        <hr>
+                        <br>
+                        <h5><i class="fas fa-map-marker-alt"></i> Seacon Cineplex | CINEMA 4</h5>
+                        <br><p><i class="fas fa-volume-up"></i> ENG  |  <i class="fas fa-closed-captioning"></i> THAI</p>
                     </div>
-                    <!-- Collapse -->
-                    <div class="collapse show " id="main" style="background: #f9f9f9;">
-                        <p>Category: Horror</p>
-                        <p>Rate: 15 | Time: 100 mins</p>
-                    </div>
-                    <div class="collapse" id="sysnopsis" style="background: #f9f9f9;">
-                        <p>เรื่องราวของคนแปลกหน้า 6 คน ที่เข้าร่วมเล่นเกมปริศนาและพบว่าตัวเองอยู่ในห้องที่เต็มไปด้วยสถานการณ์สุดอันตรายทุกคนจะต้องใช้ไหวพริบของตัวเองในการหาคำใบ้เพื่อออกจากห้องนี้ไปยังห้องต่อไปและเอาชนะเกมนี้ให้ได้</p>
-                    </div>
+                    
                     </div>
                 </div>
                 </div>
             </div>
         </div>
  
-    <div class="container" style="margin-top: 1em;">
-        <input type="text" class="form-control mt-4 mb-4" placeholder="ค้นหาโรงภาพยนตร์หรือภาพยนตร์">
-    
-        <div class="card">
-            <h5 class="card-header bg-dark text-white">Seacon Cineplex</h5>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-1" style="border-right: 1px solid #000;">TH</div>
-                    <div class="col-7">
-                        <a href="seats.html"><button type="button" class="btn btn-outline-secondary">10:00</button></a>
-                        <button type="button" class="btn btn-outline-secondary">11:30</button>
-                        <button type="button" class="btn btn-outline-secondary">13:30</button>
-                        <button type="button" class="btn btn-outline-secondary">16:15</button>
-                        <button type="button" class="btn btn-outline-secondary">18:00</button>
-                        <button type="button" class="btn btn-outline-secondary">20:20</button>
-                        <button type="button" class="btn btn-outline-secondary">22:00</button>
-                    </div>
-                    <div class="col-1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div style="width:fit-content;border:1px solid #000;padding: .6em .6em 0em .6em;margin-top: 2em;text-align: center;">
+                    <h5>CINEMA</h5>
+                    <h1>4</h1>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
-                    <div class="col-7">
-                        <button type="button" class="btn btn-outline-secondary">13:30</button>
-                        <button type="button" class="btn btn-outline-secondary">16:15</button>
-                        <button type="button" class="btn btn-outline-secondary">22:00</button>
-                    </div>
-                    <div class="col-1"></div>
+            </div>
+            <div class="col-md-10">
+                <div class="d-flex flex-row" style="padding: .6em .6em 0em 0em;margin-top: 2em;font-size: 1.2em;">
+                    <span class="iseat" style="color: rgb(96, 205, 255);margin-right: 1em;"><i class="fas fa-square"></i> Deluxe Seat</span>
+                    <span class="iseat" style="color: rgb(0, 64, 182);margin-right: 1em;"><i class="fas fa-square"></i> Premium Seat</span>
+                    <span class="iseat" style="color: rgb(70, 0, 150);"><i class="fas fa-square"></i> Honeymoon Seat</span>
                 </div>
             </div>
         </div>
-
-        <div class="card mt-4">
-                <h5 class="card-header bg-dark text-white">Mega Cineplex</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-1" style="border-right: 1px solid #000;">TH</div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-outline-secondary">13:30</button>
-                            <button type="button" class="btn btn-outline-secondary">16:15</button>
-                            <button type="button" class="btn btn-outline-secondary">18:00</button>
-                            <button type="button" class="btn btn-outline-secondary">20:20</button>
-                            <button type="button" class="btn btn-outline-secondary">22:00</button>
-                        </div>
-                        <div class="col-1"></div>
+        <div class="row">
+            <div class="col-md-9">
+                <p class="text-center">Screen</p>
+    
+                <div class="cinema">
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">A</span>
+                        <span class="iseat" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">A</span>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-outline-secondary">13:30</button> 
-                            <button type="button" class="btn btn-outline-secondary">20:20</button>
-                        </div>
-                        <div class="col-1"></div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">B</span>
+                        <span class="iseat" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">B</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">C</span>
+                        <span class="iseat" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">C</span>
+                    </div>
+                    <br><br>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">D</span>
+                        <span class="iseat select" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">D</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">E</span>
+                        <span class="iseat" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">E</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">E</span>
+                        <span class="iseat" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">E</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">E</span>
+                        <span class="iseat" id="premium" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">E</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">E</span>
+                        <span class="iseat" id="premium" value="A1"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A2"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A3"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" id="premium" value="A4"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" id="premium" value="A5"><i class="fas fa-square"></i></span>
+                        <span class="iseat select" id="premium" value="A6"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A7"><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="premium" value="A8"><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">E</span>
+                    </div>
+                    <div class="cinema-row d-flex flex-row justify-content-center" style="font-size: 2em;">
+                        <span style="color: rgb(109, 109, 109);padding-right: 1.5em;">AA</span>
+                        <span class="iseat select" id="honeymoon" value="A1"><i class="fas fa-square"></i><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="honeymoon" value="A1"><i class="fas fa-square"></i><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="honeymoon" value="A1"><i class="fas fa-square"></i><i class="fas fa-square"></i></span>
+                        <span class="iseat" id="honeymoon" value="A1"><i class="fas fa-square"></i><i class="fas fa-square"></i></span>
+                        <span style="padding-left: 1.5em;">AA</span>
                     </div>
                 </div>
+                
             </div>
+            <div class="col-md-3" style="background: rgb(216, 216, 216);padding: 3em 1.25em 1.25em 1.25em;">
+                <div class="member"><i class="fas fa-user-circle"></i> Login/Signp</div>
+                <br>
+                <div class="information">
+                    <h5>Friend Zone</h5>
+                    <p style="color: rgb(0, 83, 161);">21 February 2019<br>14:20</p>
+                    <br>
+                    <h5>CINEMA 4</h5>
+                    <p style="color: rgb(0, 83, 161);">Seacon Cineplex</p>
+                </div>
+                <div class="selected-seat">
+                    <h5 style="background: rgba(145, 145, 145, 0.329);color:#000;padding: .5em;">Selected Seats</h5>
+                    <span>G14, H14</span>
+                </div>
+                <div class="total">
+                    <h5  style="background: rgba(145, 145, 145, 0.329);color:#000;padding: .5em;">Total</h5>
+                    <span>800 THB</span>
+                </div>
+                <br>
+                <div class="continue">
+                    <button class="btn btn-outline-info" style="width: 100%;"><i class="far fa-money-bill-alt"></i> Discounts</button>
+                    <br><br>
+                    <a href="index.html"><button class="btn btn-outline-primary" style="width: 100%;">Continue</button></a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- footer -->
