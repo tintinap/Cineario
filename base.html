@@ -24,7 +24,7 @@
     <nav class="navbar navbar-light bg-main-white">
         <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
     </nav>
-    <div id="nav-bar">
+    <div id="nav">
         <nav style="margin-top: -5px;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down">
             <a class="navbar-brand ml-2 logo" href="#"><b>Cineario</b></a>
             <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,9 +165,7 @@
         </div>
     </footer>
     <!-- JavaScript Part  -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-    <script>
+    <script name="authen-system">
         var auth = new Vue({
             el: "#sign-in",
             data: {
@@ -224,9 +222,8 @@
                 }
             }
         })
-
         var nav = new Vue({
-            el: '#nav-bar',
+            el: '#nav',
             data: {
                 sign_display: 'Sign-in/Sign-up',
 
