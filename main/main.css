@@ -61,6 +61,10 @@
         color: rgba(0, 0, 0, .5);
     }
     
+    .red-holder::-webkit-input-placeholder {
+        color: red;
+    }
+    
     *:focus {
         outline: none;
     }
@@ -212,7 +216,7 @@
         border: 3px solid #888;
         /* Could be more or less, depending on screen size */
         width: 520px!important;
-        height: 600px;
+        height: auto;
     }
     /* The Close Button (x) */
     
