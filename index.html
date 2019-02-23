@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Web Name</title>
+    <title>Cineario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main/main.css" />
     <script src="main/main.js"></script>
@@ -14,16 +14,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 
 </head>
 
 <body>
     <nav class="navbar navbar-light bg-main-white">
-        <a style="color: #f9f9f9" class="navbar-brand hidden" href="#">Navbar</a>
+        <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
     </nav>
 
-    <nav style="margin-top: -5px;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull">
-        <a class="navbar-brand ml-2" href="#"><b>WebName</b></a>
+    <nav style="margin-top: -5px;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down">
+        <a class="navbar-brand ml-2 logo" href="#"><b>Cineario</b></a>
         <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,9 +50,9 @@
     <div id="sign-in" class="modal">
 
         <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
+            <div class="logocontainer">
                 <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="img/logo.png" alt="Avatar" class="avatar">
+                <div class="avatar logo">Cineario</div>
             </div>
 
             <div class="container">
@@ -60,11 +61,16 @@
 
                     <input type="password" placeholder="Password" name="psw" required><br>
 
-                    <button class="btn btn-primary" type="submit">Sign-in</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-                    <span>Forgot <a href="#">password?</a></span>
+                    <div class="lower-part">
+                        <button style="float: left;" class="btn btn-primary justify-content-left px-4" type="submit">Sign-in</button>
+                        <label style="float: right;" class="justify-content-end">
+                            <input type="checkbox" checked="checked" name="remember"> Remember me <br>
+                            <span>Forgot <a href="#">password?</a></span>
+                        </label>
+                        <div>
+                            <a></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -85,105 +91,190 @@
                     <img class="d-block w-100" src="img/landscape poster/l2.jpg" alt="Third slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
     <!-- carousel end -->
     <!-- dropdown-selector -->
-    <div style="background-color: aquamarine" class="container mx-auto m-5 p-4 text-center">
-        <div class="cinema-dropdown mx-auto">
-            <form class="text-center d-flex justify-content-center">
+    <div class="container mx-auto m-5 p-4 text-center">
+        <div class="cinema-dropdown mx-auto p-3">
+            <div class="text-center d-flex justify-content-center">
                 <div class="d-flex flex-row">
-                    <div class="flex-column col-md-4">
-                        <select name="movie-selector" id="movie-selector">
-                        <option value="none">All Cinema</option>
-                        <option value="none">All Cinema</option>
-                        <option value="none">All Cinema</option>
-                        <option value="none">All Cinema</option> 
-                    </select>
+                    <!-- <div class="flex-column col-md-6 mr-4"> -->
+                    <select name="genres-selector" class="genres-selector">
+                            <option value="none" disabled>select genere</option>
+                            <option value="none">all generes</option>
+                            <option value="none">action</option>
+                            <option value="none">comedy</option>
+                            <option value="none">sci-fi</option>
+                            <option value="none">horror</option>
+                            <option value="none">thriller</option>
+                            <option value="none">romance</option>
+                            <option value="none">animated</option>
+                        </select>
+                    <!-- </div> -->
+                    <!-- <div class="flex-column col-md-6 mx-4"> -->
+                    <div class="cinema-search px-3">
+                        <form id="demo-2">
+                            <input type="search" placeholder="all movies">
+                        </form>
                     </div>
-                    <div class="flex-column col-md-4">
-                        <select name="movie-selector" id="movie-selector">
-                        <option value="none">All Movie</option>
-                        <option value="none">All Movie</option>
-                        <option value="none">All Movie</option>
-                        <option value="none">All Movie</option>
-                    </select>
-                    </div>
-                    <div class="flex-column col-md-4">
-                        <button>SHOWTIME</button>
-                    </div>
+                    <!-- </div> -->
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     <!-- dropdown-selector end -->
     <div class="container text-center">
-        <b>
+        <b style="font-size: 2rem;">
             Movies
         </b>
         <div class="row py-5">
             <div class="col-md-4">
-                <div class="movie-card bg-main-white">
-                    <img src="img/vertical poster/v1.jpg" alt="">
-                    <div class="py-3">
-                        <p>
-                            <span>RELEASE DATE:</span>
-                            <span>2014-04-04</span>
-                        </p>
-                        <h4>
-                            <span>Captain America: The Winter Solider</span>
-                        </h4>
-                    </div>
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v1.jpg" alt="">
+                            <div class="py-3">
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2014-04-04</span>
+                                </p>
+                                <h4>
+                                    <span>Captain America: The Winter Solider</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="movie-card bg-main-white">
-                    <img src="img/vertical poster/v2.jpg" alt="">
-                    <div class="py-3">
-                        <p>
-                            <span>RELEASE DATE:</span>
-                            <span>2019-02-14</span>
-                        </p>
-                        <h4>
-                            <span>Friend Zone</span>
-                        </h4>
-                    </div>
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v2.jpg" alt="">
+                            <div class="py-3">
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2019-02-14</span>
+                                </p>
+                                <h4>
+                                    <span>Friend Zone</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="movie-card bg-main-white">
-                    <img src="img/vertical poster/v3.jpg" alt="">
-                    <div class="py-3">
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v3.jpg" alt="">
+                            <div class="py-3">
 
-                        <p>
-                            <span>RELEASE DATE:</span>
-                            <span>2014-04-04</span>
-                        </p>
-                        <h4>
-                            <span>Alita: Battle Angel</span>
-                        </h4>
-                    </div>
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2014-04-04</span>
+                                </p>
+                                <h4>
+                                    <span>Alita: Battle Angel</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v3.jpg" alt="">
+                            <div class="py-3">
+
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2014-04-04</span>
+                                </p>
+                                <h4>
+                                    <span>Alita: Battle Angel</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v2.jpg" alt="">
+                            <div class="py-3">
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2019-02-14</span>
+                                </p>
+                                <h4>
+                                    <span>Friend Zone</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v2.jpg" alt="">
+                            <div class="py-3">
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2019-02-14</span>
+                                </p>
+                                <h4>
+                                    <span>Friend Zone</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="movie-poster m-4">
+                    <a href="#">
+                        <div class="movie-card bg-main-white">
+                            <img src="img/vertical poster/v2.jpg" alt="">
+                            <div class="py-3">
+                                <p>
+                                    <span>RELEASE DATE:</span>
+                                    <span>2019-02-14</span>
+                                </p>
+                                <h4>
+                                    <span>Friend Zone</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
     <!-- test -->
-    <div style="color: transparent">
+    <!-- <div style="color: transparent">
         <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
         <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
         <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
         <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-    </div>
+    </div> -->
     <!-- test -->
     <!-- footer -->
     <footer class="footer mt-auto ">
@@ -191,7 +282,7 @@
             <div class="footer bg-main-white ">
                 <div class="row">
                     <div class=" col-md-4 p-5 ">
-                        <img class="footer-logo d-flex justify-content-between " src="img/logo.png " alt=" ">
+                        <div class="footer-logo d-flex justify-content-between logo">Cineario</div>
                     </div>
                     <div class="col-md-4 p-5 text-center ">
                         <div class="row social-media d-flex justify-content-center ">
@@ -208,7 +299,7 @@
                     </div>
                     <div class=" col-md-4 pt-4 pb-5 px-5 ">
                         <div class="row d-flex justify-content-end social-media ">
-                            Web-Name Cinema
+                            Cineario Cineplex
                         </div>
                         <div class="row d-flex justify-content-end link ">
                             <a href="#">Contact our support</a>
@@ -223,6 +314,7 @@
         </div>
     </footer>
     <!-- JavaScript Part  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
