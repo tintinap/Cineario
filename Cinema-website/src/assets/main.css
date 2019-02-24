@@ -6,9 +6,6 @@
     /* color end */
     /* font */
     
-    @font-face {
-        font-family: Might-type;
-    }
     /* font end */
     
     body {
@@ -431,4 +428,14 @@ select{
     font-size: 1.25em;
     font-weight: bold;
     cursor: pointer;
+}
+
+.imgshadow {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(70%);
+}
+
+.headmargin{
+	margin-top: 20px;
+	margin-bottom: 30px;
 }

@@ -146,7 +146,7 @@
                 <div class="continue">
                     <button class="btn btn-outline-info" style="width: 100%;"><i class="far fa-money-bill-alt"></i> Discounts</button>
                     <br><br>
-                    <a href="../"><button class="btn btn-outline-primary" style="width: 100%;">Continue</button></a>
+                    <a href="/e-ticket"><button class="btn btn-outline-primary" style="width: 100%;">Continue</button></a>
                 </div>
             </div>
         </div>
