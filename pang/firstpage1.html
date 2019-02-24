@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main/jackmain.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main/pangcss.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="main/main.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body >
+    <nav class="navbar navbar-light bg-main-white">
+        <a style="color: #f9f9f9" class="navbar-brand hidden" href="#">Navbar</a>
+    </nav>
+
+    <nav style="margin-top: -5px;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull">
+        <a class="navbar-brand ml-2" href="#"><b>WebName</b></a>
+        <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
+                <li class="nav-item" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">ภาพยนตร์</a>
+                </li>
+                <li class="nav-item" style="margin-right: 1em;">
+                    <a class="nav-link" href="#">โรงภาพยนตร์</a>
+                </li>
+            </ul>
+            <a style="font-size: 12px" id="sign-up" class="nav-item my-2 link text-md-right" onclick="document.getElementById('sign-in').style.display='block'" href="#"><i style="color:#191919!important" class="fas fa-sign-in-alt"></i>
+                Sign-in/Sign-up</a>
+        </div>
+    </nav>
+    <!-- Login -->
+
+    <div id="sign-in" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="img/logo.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <div class="text-center">
+                    <input type="text" placeholder="Username" name="uname" required>
+
+                    <input type="password" placeholder="Password" name="psw" required><br>
+
+                    <button class="btn btn-primary" type="submit">Sign-in</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <span>Forgot <a href="#">password?</a></span>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="mar50 center"  id="vue2">
+    ยอดชำระ {{money}} บาท {{customer.email}}
+
+</div>
+
+
+
+
+    <!-- ------------------------------------------------+open tag 2 ++++---------------------------------------------- -->
+
+<div class="container newfont mardown100" style="align-items: center;">
+    <div class="row mardown100">
+        <div class="col-3">
+
+        </div>  
+ <aside class="col-7">
+    <article class="card shadow_1 ">
+    <ul class="nav bg-light nav-pills rounded nav-fill em2" role="tablist">
+           <li class="nav-item shadow_2">
+               <a class="nav-link  active" data-toggle="pill" href="#pay">
+               ซื้อตั๋วภาพยนตร์   <hr><i class="fas fa-shopping-cart"></i> </a>
+           </li>
+           <li class="nav-item shadow_2">
+              <a class="nav-link" data-toggle="pill" href="#test">
+              จองตั๋วภาพยนตร์ <hr><i class="fas fa-film"></i>  </a>
+           </li>
+    </ul>
+    <!-- ------------------------------------------------+++++close tag 2 ++++---------------------------------------------- -->
+
+
+    <div class="card-body   color1 ">
+        <div class="tab-content" >
+
+
+
+<div class="tab-pane active" id="pay" >
+        <form novalidate>
+
+            <!-- ------------------------------------------------form 2 input first-------------------------------------------------------- -->
+             <div class="center marup50 em2">เลือกช่องทางชำระเงิน</div>
+            <div class="row">
+                <div class="col-1">
+
+                </div>
+            <div class="col-lg-10" style="text-align: center;">
+                <ul class="nav bg-light nav-pills rounded nav-fill inbutton mb-5 " role="tablist">
+                    <li class="nav-item shadow_2">
+                        <a class="nav-link  active " data-toggle="pill" href="#nav-tab-card">
+                        <i class="fa fa-credit-card "></i> &nbsp;  CreditCard</a>
+                    </li>
+                    <li class="nav-item  shadow_2">
+                        <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                        <i class="fab fa-paypal"></i>  &nbsp;PromptPay  </a>
+                    </li>
+                    <li class="nav-item shadow_2">
+                        <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                                <i class="fas fa-chalkboard-teacher"> </i> &nbsp;&nbsp;&nbsp;Movie Card   </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<!-- -------------------------------------3 buttom------------------------------------------------------ -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row ">
+
+
+                            <!-- show form--------------------------------- -->
+                         <div class="tab-content mardown100">
+                                    <!-- ---------------------number 1---------------------------------------- -->
+                                <div class="tab-pane  show active" id="nav-tab-card" style="margin: 0 auto;">
+                                    <form >
+                                        <div class="form-group">
+                                          <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ถือบัตร" required="" v-model="">
+                                        </div> <!-- form-group.// -->
+                                        <div class="form-group">
+                                          <div class="input-group">
+                                            <input type="text" class="form-control" name="cardNumber" placeholder="หมายเลขบัตร" required v-model="">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text ">
+                                                <i class="fab fa-cc-visa"></i>   
+                                                <i class="fab fa-cc-amex"></i>   
+                                                <i class="fab fa-cc-mastercard"></i> 
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div> <!-- form-group.// -->
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label><span class="hidden-xs">Expiration</span> </label>
+                                                  <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="MM" required v-model="">
+                                                    <input type="number" class="form-control " placeholder="YY" required v-model="">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label  >CVV <i class="fa fa-question-circle"></i></label>
+                                                    <input type="number" class="form-control " v-model="">
+                                                </div> <!-- form-group.// -->
+                                            </div>
+                                        </div> <!-- row.// -->
+                                        <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2 " type="submit" data-target="#exampleModal1" data-toggle="modal"> Confirm  </button>
+
+                                    </form>
+                                   
+                                </div> <!-- tab-pane.// -->
+
+                              <!-- -------------------------------------------number 2---------------------------- -->
+
+                                  <div class="tab-pane fade" id="nav-tab-paypal">
+                                    <div class="row em12">
+                                        <div class="col-sm-12" >
+                                             <h4 class="center" >กรุณากรอกข้อมูลสำหรับการจ่ายเงินPromptPay</h4>
+                                         </div>
+                                        <div class="col" style="text-align: center; margin-top: 30px;">
+                                           <img src="qrcode.png" style="width: 200px;height: auto;">
+                                        </div>
+                                    </div>
+                                    <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2 " type="submit" data-target="#exampleModal1" data-toggle="modal"> Confirm  </button>
+                                  </div>
+
+
+                              <!-- ---------------------------------------------------------------------------number 3------------------------------------------------------------------------------------------------------------------ -->
+
+                              <div class="tab-pane fade" id="nav-tab-bank">
+                                <div class="row em12">
+                                    <p class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินด้วย MovieCard</p>
+                                   <div class="col-lg-12 center">
+
+                                            <input type="text" class="form-control" name="cardNumber1" placeholder="รหัสหน้าบัตร 16 หลัก" required="" v-model="">
+                                            <p class="marup10"></p>
+                                            <input type="text" class="form-control" name="cardNumber2" placeholder="PIN ด้านหลังบัตร" required v-model="">
+                                  </div>
+                                </div>
+                                <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2 " type="submit" data-target="#exampleModal1" data-toggle="modal"> Confirm  </button>
+                              </div>
+                                     
+                          
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </form>
+</div>
+        <!-- ---------------------------------------------------------------------------close form -->
+
+     <!-- -----------------------------------book form----------- -->
+        <div class="tab-pane fade mardown100" id="test">
+           
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 center">
+                        <h1 class="headmargin">ยืนยันการจองตั๋วภาพยนตร์</h1>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-1">
+                        
+                    </div>
+                    <div class="col-lg-10">
+                            <form>
+                        <div class="row em12">
+                                
+                        <p>กรุณากรอกข้อมูลสำหรับการจองตั๋วชมภาพยนตร์</p>
+                            <div class="col-lg-12 ">
+                                <p>E-mail</p>
+                                <input type="email" class="form-control" name="cardNumber"  required>
+                                <p class="marup10">เบอร์โทร</p>
+                                <input type="text" class="form-control" name="cardNumber"  required="" pattern="[0-9]{5}">
+                            </div>
+
+                        </div>
+                            <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2 " type="submit" /*data-target="#exampleModal1"*/ data-toggle="modal"  > Confirm  </button>
+                            </form>
+                    </div>
+                </div>
+               
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                    <div class="modal-header ">
+                        <h5 class="modal-title center" id="exampleModalLongTitle">ยืนยันการจองตั๋วภาพยนตร์</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        ...
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                        <button type="button" class="btn btn-primary">ยืนยัน</button>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div> -->
+
+            </div>
+            
+        </div>
+
+   <!-- ---------------------------------end--book form----------- -->
+           
+        </div>
+    </div>
+    <!-- end card -->
+    </article>
+  </aside>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer mt-auto ">
+        <div class=" p-sidefull container-fluid ">
+            <div class="footer bg-main-white ">
+                <div class="row ">
+                    <div class=" col-md-4 p-5 ">
+                        <img class="footer-logo d-flex justify-content-between " src="img/logo.png " alt=" ">
+                    </div>
+                    <div class="col-md-4 p-5 text-center ">
+                        <div class="row social-media d-flex justify-content-center ">
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-instagram link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-facebook-square link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-twitter link-reverse "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 pt-4 pb-5 px-5 ">
+                        <div class="row d-flex justify-content-end social-media ">
+                            Web-Name Cinema
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">Contact our support</a>
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">About us</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript Part  -->
+
+
+
+
+<script type="text/javascript" src="app.js">
+
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
+</body>
+
+</html>

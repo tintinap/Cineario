@@ -1,0 +1,379 @@
+    /* Color */
+    
+    .bg-main-white {
+        background-color: #f6f6f6;
+    }
+    /* color end */
+    /* font */
+    
+    @font-face {
+        font-family: Might-type;
+        src: url(../font/Mightype\ Script.otf)
+    }
+    /* font end */
+    
+    body {
+        background-color: #eeeef3!important;
+        z-index: -1020;
+        font-family: 'Kanit', sans-serif;
+    }
+    /* Accessproies */
+    
+    .p-verticalfull {
+        padding-top: 0rem !important;
+        padding-bottom: 0rem !important;
+    }
+    
+    .p-sidefull {
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    }
+    
+    .m-verticalfull {
+        margin-top: 0rem !important;
+        margin-bottom: 0rem !important;
+    }
+    
+    .m-sidefull {
+        margin-left: 0rem !important;
+        margin-right: 0rem !important;
+    }
+    
+    .link {
+        color: rgba(0, 0, 0, .5);
+    }
+    
+    .link:hover {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .7);
+    }
+    
+    .link-reverse {
+        color: rgba(0, 0, 0, .7);
+    }
+    
+    .link-reverse:hover {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .5);
+    }
+    
+    *:focus {
+        outline: none;
+    }
+    /* Accessories end */
+    /* footer */
+    
+    .footer {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: inherit;
+        margin: 0 auto;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .social-media {
+        font-size: 30px;
+    }
+    
+    .footer-logo {
+        width: 50px;
+        height: 50px;
+    }
+    /* NavBar */
+    
+    .navbar-brand {
+        font-family: Might-type;
+    }
+    
+    .navbar {
+        padding: 0rem 1rem;
+    }
+    
+    .nav-link {
+        border: 2px solid transparent;
+        font-family: 'Kanit', sans-serif;
+    }
+    
+    .nav-link:hover {
+        border-bottom: 2px solid #d8b3a8;
+    }
+    
+    #sign-up {
+        width: auto;
+        background-color: transparent;
+    }
+    /* NavBar end */
+    /*Login*/
+    
+    #sign-in img {
+        width: 100px;
+        height: 100px;
+    }
+    /* Full-width input fields */
+    
+    #sign-in input[type=text],
+    #sign-in input[type=password] {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #b1b1b1;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+    /* Set a style for all buttons */
+    
+    #sign-in button {
+        border: none;
+        cursor: pointer;
+    }
+    
+    #sign-in button:active {
+        text-emphasis: none;
+    }
+    
+    #sign-in button:hover {
+        opacity: 0.8;
+    }
+    /* Center the image and position the close button */
+    
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+    
+    #sign-in img.avatar {
+        width: 40%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    
+    #sign-in .container {
+        padding: 16px;
+    }
+    
+    #sign-in span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    /* The Modal (background) */
+    
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 999999;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: auto;
+        /* Full width */
+        height: auto;
+        /* Full height */
+        overflow-y: hidden;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+        padding-top: 60px;
+    }
+    /* Modal Content/Box */
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 3px solid #888;
+        /* Could be more or less, depending on screen size */
+        width: 520px!important;
+        height: 600px;
+    }
+    /* The Close Button (x) */
+    
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    /* Add Zoom Animation */
+    
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+    
+    @keyframes animatezoom {
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
+    /* Change styles for span and cancel button on extra small screens */
+    
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+    /*Login-end*/
+    /* carousel */
+    
+    .carousel-inner {
+        height: 700px;
+    }
+    
+    .poster-slide img {
+        height: 720px;
+        width: 1280px;
+    }
+    /* carousel end */
+    /* dropdown-selector */
+    
+    .cinema-dropdown {
+        width: auto;
+        font-family: 'Kanit', sans-serif;
+        font-size: 2rem;
+    }
+    /* dropdown-selector end */
+    /* movies-zone */
+    
+    .movie-card {
+        height: 600px;
+        width: 295px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: 'kanit';
+        border-radius: 0rem;
+    }
+    
+    .movie-card img {
+        position: relative;
+        width: inherit;
+        /* height: inherit; */
+    }
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+input { 
+    text-align: center;
+    color: blue;
+}
+
+select{
+    width: 33%;
+    padding: .5em;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.25em;
+    background: transparent;
+    text-align: center;
+}
+
+.process-box{
+    text-align: center;
+}
+
+.process {
+    width: 1.7em;
+    height: 1.7em;
+    background:transparent;
+    color:#000;
+    font-size:1.85em;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid #000;
+    margin-bottom: .2em;
+}
+
+.process.active {
+    box-shadow: 0px 0px 20px 0px rgb(70, 59, 59);
+}
+
+/* Selected Seat */
+.member{
+    width: 100%;
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26D0CE, rgb(64, 137, 247));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26D0CE, rgb(64, 137, 247)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    padding: .5em;
+    border-radius: 30px;
+}
+
+.information {
+    padding: .75em;
+}
+
+.selected-seat{
+    text-align: center;
+    padding: .75em;
+}
+
+.total{
+    text-align: center;
+    padding: .75em;
+}
+
+.continue{
+    text-align: center;
+    padding: .75em;
+}
+
+.iseat{
+    color: rgb(96, 205, 255);
+    padding: .2em;
+}
+
+.iseat.select{
+    color: rgb(9, 109, 0) !important;
+}
+
+#premium{
+    color: rgb(0, 64, 182);
+}
+
+#honeymoon{
+    color: rgb(70, 0, 150);
+}
