@@ -8,7 +8,6 @@
     
     @font-face {
         font-family: Might-type;
-        src: url(../font/Mightype\ Script.otf)
     }
     /* font end */
     
@@ -309,11 +308,13 @@ select{
     text-align: center;
 }
 
-.process-box{
+/* Tab Progress */
+
+.progress-box{
     text-align: center;
 }
 
-.process {
+.progress {
     width: 1.7em;
     height: 1.7em;
     background:transparent;
@@ -325,11 +326,12 @@ select{
     margin-bottom: .2em;
 }
 
-.process.active {
+.progress.active {
     box-shadow: 0px 0px 20px 0px rgb(70, 59, 59);
 }
 
-/* Selected Seat */
+/* Right-Tab Selected Seat */
+
 .member{
     width: 100%;
     background: #1A2980;  /* fallback for old browsers */
@@ -361,19 +363,57 @@ select{
     padding: .75em;
 }
 
-.iseat{
-    color: rgb(96, 205, 255);
-    padding: .2em;
+/* Selected Seat */
+
+.cinema-seat{
+    padding: 0em .1em .05em .1em;
+    cursor: pointer;
 }
 
-.iseat.select{
+.cinema-seat.txt.left{
+    font-size: .6em;
+    padding-right: 3em;
+    padding-top: .5em;
+    color: #00000036;
+}
+
+.cinema-seat.txt.right{
+    font-size: .6em;
+    padding-left: 3em;
+    padding-top: .5em;
+    color: #00000036;
+}
+
+.cinema-seat.deluxe{
+    color: #a97952;
+}
+
+.cinema-seat.premium{
+    color: #866659;
+}
+
+.cinema-seat.sofa{
+    color:#433228;
+}
+
+#select-seat{
     color: rgb(9, 109, 0) !important;
 }
 
-#premium{
-    color: rgb(0, 64, 182);
+#booking-seat{
+    color: rgb(196, 0, 0);
 }
 
-#honeymoon{
-    color: rgb(70, 0, 150);
+.movie-info{
+    width: 30%;
+    float: right;
+    text-align: center;
+    padding: .5em;
+    margin: .5em;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.movie-info:hover{
+    box-shadow: rgba(54, 70, 97, 0.4) 0px 0px 20px;
 }
