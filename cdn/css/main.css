@@ -4,6 +4,9 @@
         background-color: #f6f6f6;
     }
     /* color end */
+    /* font */
+    
+    /* font end */
     
     body {
         background-color: #eeeef3!important;
@@ -11,6 +14,9 @@
         font-family: 'Kanit', sans-serif;
     }
     
+    .logo {
+        
+    }
     /* Accessproies */
     
     .p-verticalfull {
@@ -393,53 +399,7 @@
         color: #333740;
     }
 
-    ::-webkit-input-placeholder {
-        text-align: left;
-    }
-     
-    :-moz-placeholder { /* Firefox 18- */
-        text-align: left;  
-    }
-     
-    ::-moz-placeholder {  /* Firefox 19+ */
-        text-align: left;  
-    }
-     
-    :-ms-input-placeholder {  
-        text-align: left; 
-    }
-
-    #searchbox ::-webkit-input-placeholder {
-        text-align: center;
-     }
-     
-    #searchbox :-moz-placeholder { /* Firefox 18- */
-        text-align: center;  
-     }
-     
-    #searchbox ::-moz-placeholder {  /* Firefox 19+ */
-        text-align: center;  
-     }
-     
-    #searchbox :-ms-input-placeholder {  
-        text-align: center; 
-     }
-
-input { 
-    text-align: center;
-    color: blue;
-}
-
-select{
-    width: 33%;
-    padding: .5em;
-    font-family: 'Kanit', sans-serif;
-    font-size: 1.25em;
-    background: transparent;
-    text-align: center;
-}
-
-/* Tab Progress */
+    /* Tab Progress */
 
 .progress-box{
     text-align: center;
@@ -548,7 +508,6 @@ select{
     cursor: pointer;
 }
 
-
 /* Ticket */
 
 .status{
@@ -570,84 +529,84 @@ select{
 }
 
 .headmargin{
-	margin-top: 20px;
-	margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 /* Payment */
 
 .paymenttotal{
-	margin-top: 60px;
-	margin-bottom: 50px;
-	padding-top: 30px;
-	height: 120px;
-	background-color: #191919;
-	color: white;
-	text-align: center;
-	font-size:36px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    height: 120px;
+    background-color: #191919;
+    color: white;
+    text-align: center;
+    font-size:36px;
 }
 
 .margindown4em{
-	margin-bottom: 4em;
+    margin-bottom: 4em;
 }
 
 .marup10{
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .shadow_1{
-	/*padding:30px 80px 50px 80px;*/
-	border-radius:15px; 
-	box-shadow:1px 1px 10px 5px rgba(0,0,0,0.15);
+    /*padding:30px 80px 50px 80px;*/
+    border-radius:15px; 
+    box-shadow:1px 1px 10px 5px rgba(0,0,0,0.15);
 }
 
 .shadow_2{
-	border-radius:5px; 
-  	box-shadow:1px 1px 4px 0.5px rgba(0,0,0,0.3);
+    border-radius:5px; 
+    box-shadow:1px 1px 4px 0.5px rgba(0,0,0,0.3);
 }
 
 .center{
-	text-align: center !important;
+    text-align: center !important;
 }
 
 .onclick{
-	background-color: rgba(0,0,0,0.3);
-	border-radius: 5px;
-	border-style: solid;
-  	border-width: 0px 0px 3px 0px;
-  	border-color: rgba(255,255,255,0.5);
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    border-color: rgba(255,255,255,0.5);
 }
 
 .bookticketmargin{
-	margin-top: 20px;
-	margin-bottom: 30px;
-	font-size: 4em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 4em;
 }
 
 
 .em12{
-	font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .em2{
-	font-size: 2.0em;
+    font-size: 2.0em;
 }
 
 .height{
-	height: 60px;
+    height: 60px;
 }
 .lastbuttom{
-	margin-top: 2em;
-	margin-bottom: 1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .card-body{
-	padding: 0 !important;
+    padding: 0 !important;
 }
 
 .headmargin{
-	margin-bottom: 50px;
-	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .marup50{
     margin-top: 30px;
