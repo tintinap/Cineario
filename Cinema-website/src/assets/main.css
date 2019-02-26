@@ -4,15 +4,13 @@
         background-color: #f6f6f6;
     }
     /* color end */
-    /* font */
-    
-    /* font end */
     
     body {
         background-color: #eeeef3!important;
         z-index: -1020;
         font-family: 'Kanit', sans-serif;
     }
+    
     /* Accessproies */
     
     .p-verticalfull {
@@ -53,8 +51,16 @@
         color: rgba(0, 0, 0, .5);
     }
     
+    .red-holder::-webkit-input-placeholder {
+        color: red;
+    }
+    
     *:focus {
         outline: none;
+    }
+    
+    .shadow-down {
+        box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.125)!important;
     }
     /* Accessories end */
     /* footer */
@@ -78,11 +84,12 @@
     .footer-logo {
         width: 50px;
         height: 50px;
+        font-size: 2em;
     }
     /* NavBar */
     
     .navbar-brand {
-        font-family: Might-type;
+        font-family: 'Rock Salt', cursive;
     }
     
     .navbar {
@@ -105,9 +112,10 @@
     /* NavBar end */
     /*Login*/
     
-    #sign-in img {
-        width: 100px;
-        height: 100px;
+    #sign-in .avatar {
+        font-size: 4em;
+        transform: rotate(9deg);
+        padding: 100px 100px 50px 100px;
     }
     /* Full-width input fields */
     
@@ -137,20 +145,29 @@
     }
     /* Center the image and position the close button */
     
-    .imgcontainer {
+    .logocontainer {
         text-align: center;
-        margin: 24px 0 12px 0;
+        margin: 24px 15px 42px 0;
         position: relative;
-    }
-    
-    #sign-in img.avatar {
-        width: 40%;
-        height: 100%;
-        border-radius: 50%;
     }
     
     #sign-in .container {
         padding: 16px;
+    }
+    
+    #sign-in .lower-part {
+        margin: 20px;
+        padding: 0 70px;
+    }
+    
+    #sign-in .lower-part a {
+        text-decoration: none;
+        color: #000
+    }
+    
+    #sign-in .lower-part a :hover {
+        text-decoration: none;
+        color: #4239399c
     }
     
     #sign-in span.psw {
@@ -189,7 +206,7 @@
         border: 3px solid #888;
         /* Could be more or less, depending on screen size */
         width: 520px!important;
-        height: 600px;
+        height: auto;
     }
     /* The Close Button (x) */
     
@@ -251,9 +268,99 @@
     /* dropdown-selector */
     
     .cinema-dropdown {
-        width: auto;
+        width: 55%;
         font-family: 'Kanit', sans-serif;
-        font-size: 2rem;
+        font-size: 1rem;
+        background-color: #ad8c46;
+        color: #343330;
+        /* background-image: linear-gradient(to right, #433228, #a97952); */
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .genres-selector {
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    .genres-selector option:after {
+        border-radius: 10em;
+    }
+    
+    .cinema-search {
+        width: auto;
+    }
+    
+    .cinema-search input[type=search] {
+        width: 15px;
+        padding-left: 10px;
+        color: transparent;
+        cursor: pointer;
+    }
+    
+    .cinema-search input[type=search]:hover {
+        background-color: #F5EDF0;
+    }
+    
+    .cinema-search input {
+        outline: none;
+    }
+    
+    .cinema-search input[type=search] {
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+        font-family: inherit;
+        font-size: 100%;
+    }
+    
+    .cinema-search input::-webkit-search-decoration,
+    .cinema-search input::-webkit-search-cancel-button {
+        display: none;
+    }
+    
+    .cinema-search input[type=search] {
+        background: #F5EDF0 url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+        border: solid 1px #F5EDF0;
+        padding: 6px 10px;
+        width: 100%x;
+        -webkit-border-radius: 10em;
+        -moz-border-radius: 10em;
+        border-radius: 10em;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s;
+    }
+    
+    .cinema-search input[type=search]:focus {
+        width: 130px;
+        background-color: #F5EDF0;
+        /* -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+        -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+        box-shadow: 0 0 5px rgba(109, 207, 246, .5); */
+    }
+    
+    .cinema-search input:-moz-placeholder {
+        color: black;
+    }
+    
+    .cinema-search input::-webkit-input-placeholder {
+        color: black;
+    }
+    
+    .cinema-search input[type=search]:focus {
+        width: 130px;
+        padding-left: 32px;
+        color: #000;
+        background-color: #F5EDF0;
+        cursor: auto;
+    }
+    
+    .cinema-search input:-moz-placeholder {
+        color: transparent;
+    }
+    
+    .cinema-search input::-webkit-input-placeholder {
+        color: transparent;
     }
     /* dropdown-selector end */
     /* movies-zone */
@@ -269,10 +376,21 @@
         border-radius: 0rem;
     }
     
+    .movie-card:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    }
+    
     .movie-card img {
         position: relative;
         width: inherit;
         /* height: inherit; */
+    }
+    
+    .movie-poster a,
+    .movie-poster a:hover,
+    .movie-poster a:active {
+        text-decoration: none;
+        color: #333740;
     }
 
     ::-webkit-input-placeholder {
@@ -365,6 +483,7 @@ select{
 .cinema-seat{
     padding: 0em .1em .05em .1em;
     cursor: pointer;
+    color:#433228;
 }
 
 .cinema-seat.txt.left{

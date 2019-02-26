@@ -2,7 +2,7 @@
     <div>
         <navbar />
         <movie />
-        <seats />
+        <seats @select="selects"/>
         <ifooter />
     </div>
 </template>
@@ -19,6 +19,27 @@ export default {
     ifooter,
     seats,
     movie
-  }
+  },
+
+
+      data () 
+      {
+      // function() {
+        return {
+            isActive: false,
+            seats: []
+        }
+    },
+
+  methods: {
+      selects(value) {
+        console.log(value)
+        console.log(this.isActive)
+        
+        this.seats.push(value);
+        console.log(this.seats)
+      }
+  },
+  
 }
 </script>
