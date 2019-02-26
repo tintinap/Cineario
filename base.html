@@ -24,8 +24,8 @@
     <nav class="navbar navbar-light bg-main-white">
         <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
     </nav>
-    <div id="nav">
-        <nav style="margin-top: -5px;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down">
+    <div id="nav-bar">
+        <nav style="margin-top: -5px; position: fixed; width:100%;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down pt-3">
             <a class="navbar-brand ml-2 logo" href="#"><b>Cineario</b></a>
             <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,8 +60,9 @@
         <form class="modal-content animate">
             <!-- <div class="modal-content animate"> -->
             <div class="logocontainer">
-                <span onclick="document.getElementById('sign-in').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-                <div class="avatar logo">Cineario</div>
+                <span v-on:click="setDefault" class="close" title="Close Modal">&times;</span>
+                <!-- <div class="avatar logo">Cineario</div> -->
+                <img style="width: 350px; padding-top: 55px;" src="img/logo.png" alt="">
             </div>
 
             <div class="container">
@@ -70,11 +71,11 @@
                         <button @click.prevent="logout" class="btn btn-primary justify-content-center px-4" type="submit">Log out</button>
                     </span>
                     <span v-else>
-                        <input v-model="username" type="text" placeholder="Username" id="uname" required>
+                        <input class="" :class="{ 'red-holder': uname }" v-model="username" type="text" placeholder="Username" id="uname" required>
     
-                        <input v-model="password" type="password" placeholder="Password" id="psw" required><br>
+                        <input class="" :class="{ 'red-holder': psw }" v-model="password" type="password" placeholder="Password" id="psw" required><br>
                         <span v-if="signup">
-                            <input v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
+                            <input class="" :class="{ 'red-holder': conpsw }" v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
                         </span>
 
                     <div class="lower-part">
@@ -82,7 +83,10 @@
                                 <button @click.prevent="setSignDisplay"style="float: left;" class="btn btn-primary justify-content-left px-4" type="submit">Sign-in</button>
                                 <label style="float: right;" class="justify-content-end">
                                         <input type="checkbox" checked="checked" name="remember"> Remember me <br>
-                                        <span><a @click.prevent="signup = !signup" href="#">Sign-up</a></span>
+                                        <span><a @click.prevent="signup = !signup;
+                                            uname = false
+                                            psw = false
+                                            conpsw = false" href="#">Sign-up</a></span>
                         </label>
                         </span>
                         <span v-else>
@@ -165,7 +169,7 @@
         </div>
     </footer>
     <!-- JavaScript Part  -->
-    <script name="authen-system">
+      <script name="authen-system">
         var auth = new Vue({
             el: "#sign-in",
             data: {
@@ -175,6 +179,9 @@
                 username: '',
                 password: '',
                 confirmpass: '',
+                uname: false,
+                psw: false,
+                conpsw: false,
             },
             methods: {
                 setSignDisplay() {
@@ -188,13 +195,19 @@
                         this.password = ''
                         this.confirmpass = ''
                         this.signed = true;
-                        document.getElementById('psw').classList.remove('red-holder');
-                        document.getElementById('uname').classList.remove('red-holder');
+                        if ((this.uname && this.psw && this.conpsw)) {
+                            console.log('removing RED-HOLDER');
+                            this.uname = false;
+                            this.psw = false;
+                            this.conpsw = false;
+                        }
                         document.getElementById('sign-in').style.display = 'none'
                     } else {
                         console.log("nochange");
-                        document.getElementById('psw').classList.add('red-holder');
-                        document.getElementById('uname').classList.add('red-holder');
+                        console.log('Adding RED-HOLDER');
+                        this.uname = true;
+                        this.psw = true;
+                        this.conpsw = true;
                     }
                 },
 
@@ -211,31 +224,55 @@
                         (!(this.confirmpass === '')) && this.password.length > 5) {
                         console.log("convert signup")
                         this.signup = !this.signup
-                        document.getElementById('psw').classList.remove('red-holder');
-                        document.getElementById('uname').classList.remove('red-holder');
-                        document.getElementById('conpsw').classList.remove('red-holder');
+                        if ((this.uname && this.psw && this.conpsw)) {
+                            console.log('removing RED-HOLDER');
+                            this.uname = false;
+                            this.psw = false;
+                            this.conpsw = false;
+                        }
                     } else {
-                        document.getElementById('psw').classList.add('red-holder');
-                        document.getElementById('uname').classList.add('red-holder');
-                        document.getElementById('conpsw').classList.add('red-holder');
+                        console.log('Adding RED-HOLDER');
+                        this.uname = true;
+                        this.psw = true;
+                        this.conpsw = true;
                     }
+                },
+                setDefault() { //unfinish
+                    console.log('set default');
+                    this.signup = false
+                    this.signed = false
+                    this.btntext = 'Sign-in'
+                    this.username = ''
+                    this.password = ''
+                    this.confirmpass = ''
+                    if ((this.uname && this.psw && this.conpsw)) {
+                        console.log('removing RED-HOLDER');
+                        this.uname = false;
+                        this.psw = false;
+                        this.conpsw = false;
+                    }
+                    document.getElementById('sign-in').style.display = 'none'
                 }
-            }
-        })
+            },
+        });
         var nav = new Vue({
-            el: '#nav',
+            el: '#nav-bar',
             data: {
                 sign_display: 'Sign-in/Sign-up',
 
             },
             methods: {
                 openPopup() {
-                    document.getElementById('psw').classList.remove('red-holder');
-                    document.getElementById('uname').classList.remove('red-holder');
-                    document.getElementById('conpsw').classList.remove('red-holder');
-                }
-            },
-        })
+                    if ((this.uname && this.psw && this.conpsw)) {
+                        console.log('removing RED-HOLDER');
+                        auth.uname = false;
+                        auth.psw = false;
+                        auth.conpsw = false;
+                    }
+                },
+            }
+        });
+    </script>
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
