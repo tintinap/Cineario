@@ -60,8 +60,9 @@
         <form class="modal-content animate">
             <!-- <div class="modal-content animate"> -->
             <div class="logocontainer">
-                <span @click="document.getElementById('sign-in').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-                <div class="avatar logo">Cineario</div>
+                <span v-on:click="setDefault" class="close" title="Close Modal">&times;</span>
+                <!-- <div class="avatar logo">Cineario</div> -->
+                <img style="width: 350px; padding-top: 55px;" src="img/logo.png" alt="">
             </div>
 
             <div class="container">
@@ -70,11 +71,11 @@
                         <button @click.prevent="logout" class="btn btn-primary justify-content-center px-4" type="submit">Log out</button>
                     </span>
                     <span v-else>
-                        <input v-model="username" type="text" placeholder="Username" id="uname" required>
+                        <input class="" :class="{ 'red-holder': uname }" v-model="username" type="text" placeholder="Username" id="uname" required>
     
-                        <input v-model="password" type="password" placeholder="Password" id="psw" required><br>
+                        <input class="" :class="{ 'red-holder': psw }" v-model="password" type="password" placeholder="Password" id="psw" required><br>
                         <span v-if="signup">
-                            <input v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
+                            <input class="" :class="{ 'red-holder': conpsw }" v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
                         </span>
 
                     <div class="lower-part">
@@ -82,7 +83,10 @@
                                 <button @click.prevent="setSignDisplay"style="float: left;" class="btn btn-primary justify-content-left px-4" type="submit">Sign-in</button>
                                 <label style="float: right;" class="justify-content-end">
                                         <input type="checkbox" checked="checked" name="remember"> Remember me <br>
-                                        <span><a @click.prevent="signup = !signup" href="#">Sign-up</a></span>
+                                        <span><a @click.prevent="signup = !signup;
+                                            uname = false
+                                            psw = false
+                                            conpsw = false" href="#">Sign-up</a></span>
                         </label>
                         </span>
                         <span v-else>
@@ -250,6 +254,9 @@
                 username: '',
                 password: '',
                 confirmpass: '',
+                uname: false,
+                psw: false,
+                conpsw: false,
             },
             methods: {
                 setSignDisplay() {
@@ -263,13 +270,19 @@
                         this.password = ''
                         this.confirmpass = ''
                         this.signed = true;
-                        document.getElementById('psw').classList.remove('red-holder');
-                        document.getElementById('uname').classList.remove('red-holder');
+                        if ((this.uname && this.psw && this.conpsw)) {
+                            console.log('removing RED-HOLDER');
+                            this.uname = false;
+                            this.psw = false;
+                            this.conpsw = false;
+                        }
                         document.getElementById('sign-in').style.display = 'none'
                     } else {
                         console.log("nochange");
-                        document.getElementById('psw').classList.add('red-holder');
-                        document.getElementById('uname').classList.add('red-holder');
+                        console.log('Adding RED-HOLDER');
+                        this.uname = true;
+                        this.psw = true;
+                        this.conpsw = true;
                     }
                 },
 
@@ -286,17 +299,37 @@
                         (!(this.confirmpass === '')) && this.password.length > 5) {
                         console.log("convert signup")
                         this.signup = !this.signup
-                        document.getElementById('psw').classList.remove('red-holder');
-                        document.getElementById('uname').classList.remove('red-holder');
-                        document.getElementById('conpsw').classList.remove('red-holder');
+                        if ((this.uname && this.psw && this.conpsw)) {
+                            console.log('removing RED-HOLDER');
+                            this.uname = false;
+                            this.psw = false;
+                            this.conpsw = false;
+                        }
                     } else {
-                        document.getElementById('psw').classList.add('red-holder');
-                        document.getElementById('uname').classList.add('red-holder');
-                        document.getElementById('conpsw').classList.add('red-holder');
+                        console.log('Adding RED-HOLDER');
+                        this.uname = true;
+                        this.psw = true;
+                        this.conpsw = true;
                     }
+                },
+                setDefault() { //unfinish
+                    console.log('set default');
+                    this.signup = false
+                    this.signed = false
+                    this.btntext = 'Sign-in'
+                    this.username = ''
+                    this.password = ''
+                    this.confirmpass = ''
+                    if ((this.uname && this.psw && this.conpsw)) {
+                        console.log('removing RED-HOLDER');
+                        this.uname = false;
+                        this.psw = false;
+                        this.conpsw = false;
+                    }
+                    document.getElementById('sign-in').style.display = 'none'
                 }
-            }
-        })
+            },
+        });
         var nav = new Vue({
             el: '#nav-bar',
             data: {
@@ -305,21 +338,15 @@
             },
             methods: {
                 openPopup() {
-                    document.getElementById('psw').classList.remove('red-holder');
-                    document.getElementById('uname').classList.remove('red-holder');
-                    document.getElementById('conpsw').classList.remove('red-holder');
+                    if ((this.uname && this.psw && this.conpsw)) {
+                        console.log('removing RED-HOLDER');
+                        auth.uname = false;
+                        auth.psw = false;
+                        auth.conpsw = false;
+                    }
                 },
-                // setDefault() { //unfinish
-                //     auth.signup = false
-                //     auth.signed = false
-                //     auth.btntext = 'Sign-in'
-                //     auth.username = ''
-                //     auth.password = ''
-                //     auth.confirmpass = ''
-                //     document.getElementById('sign-in').style.display = 'none'
-                // }
-            },
-        })
+            }
+        });
     </script>
 
     <script name="movies-dataset">
