@@ -402,3 +402,217 @@
         text-decoration: none;
         color: #333740;
     }
+    /* Tab Progress */
+    
+    .progress-box {
+        text-align: center;
+    }
+    
+    .progress {
+        width: 1.7em;
+        height: 1.7em;
+        background: transparent;
+        color: #000;
+        font-size: 1.85em;
+        text-align: center;
+        border-radius: 50%;
+        border: 3px solid #000;
+        margin-bottom: .2em;
+        padding-left: .43em;
+    }
+    
+    .progress.active {
+        box-shadow: 0px 0px 20px 0px rgb(70, 59, 59);
+    }
+    /* Right-Tab Selected Seat */
+    
+    .member {
+        width: 100%;
+        background: #1A2980;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #26D0CE, rgb(64, 137, 247));
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #26D0CE, rgb(64, 137, 247));
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+        text-align: center;
+        font-size: 1.5em;
+        padding: .5em;
+        border-radius: 30px;
+    }
+    
+    .information {
+        padding: .75em;
+    }
+    
+    .selected-seat {
+        text-align: center;
+        padding: .75em;
+    }
+    
+    .total {
+        text-align: center;
+        padding: .75em;
+    }
+    
+    .continue {
+        text-align: center;
+        padding: .75em;
+    }
+    /* Selected Seat */
+    
+    .cinema-seat {
+        padding: 0em .1em .05em .1em;
+        cursor: pointer;
+        color: #433228;
+        content: '<i class="fas fa-square"></i>';
+    }
+    
+    .cinema-seat.txt.left {
+        font-size: .6em;
+        padding-right: 3em;
+        padding-top: .5em;
+        color: #00000036;
+    }
+    
+    .cinema-seat.txt.right {
+        font-size: .6em;
+        padding-left: 3em;
+        padding-top: .5em;
+        color: #00000036;
+    }
+    
+    .cinema-seat.deluxe {
+        color: #a97952;
+    }
+    
+    .cinema-seat.premium {
+        color: #866659;
+    }
+    
+    .cinema-seat.sofa {
+        color: #433228;
+    }
+    
+    #select-seat {
+        color: rgb(9, 109, 0) !important;
+    }
+    
+    #booking-seat {
+        color: rgb(196, 0, 0);
+    }
+    
+    .movie-info {
+        width: 30%;
+        float: right;
+        text-align: center;
+        padding: .5em;
+        margin: .5em;
+        border: 1px solid #62626275;
+        cursor: pointer;
+    }
+    /* Ticket */
+    
+    .status {
+        background: #00d830c2;
+        color: #fff;
+        width: 100%;
+        padding: .5em;
+        border-radius: .3em;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .imgshadow {
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(70%);
+    }
+    
+    .headmargin {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    /* Payment */
+    
+    .paymenttotal {
+        margin-top: 60px;
+        margin-bottom: 50px;
+        padding-top: 30px;
+        height: 120px;
+        background-color: #191919;
+        color: white;
+        text-align: center;
+        font-size: 36px;
+    }
+    
+    .margindown4em {
+        margin-bottom: 4em;
+    }
+    
+    .marup10 {
+        margin-top: 50px;
+    }
+    
+    .shadow_1 {
+        /*padding:30px 80px 50px 80px;*/
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+    }
+    
+    .shadow_2 {
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px 0.5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .center {
+        text-align: center !important;
+    }
+    
+    .onclick {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 0px 0px 3px 0px;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .bookticketmargin {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 4em;
+    }
+    
+    .em12 {
+        font-size: 1.2em;
+    }
+    
+    .em2 {
+        font-size: 2.0em;
+    }
+    
+    .height {
+        height: 60px;
+    }
+    
+    .lastbuttom {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    
+    .card-body {
+        padding: 0 !important;
+    }
+    
+    .headmargin {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    
+    .marup50 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }

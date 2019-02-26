@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cineario</title>
+    <title>รอบหนัง Escape Room กักห้อง เกมโหด | Cineario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main/main.css" />
     <!-- vue -->
@@ -34,10 +34,10 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
                     <li class="nav-item" style="margin-right: 1em;">
-                        <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html">หน้าแรก <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
-                        <a class="nav-link" href="./index.html#movies-list" data-scroll="movies-list">ภาพยนตร์</a>
+                        <a class="nav-link" href="./index.html#movies-list">ภาพยนตร์</a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
                         <a class="nav-link" href="./cinema.html">โรงภาพยนตร์</a>
@@ -101,88 +101,127 @@
         </form>
     </div>
     <!-- end login -->
-    <!-- carousel -->
     <div id="movies">
 
-        <div class="poster-slide">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active lanscape">
-                        <img class="d-block w-100" src="img/landscape poster/l5.jpg" alt="First slide">
+        <!-- progress bar -->
+        <div class="container d-flex flex-row justify-content-center mt-5 mb-3">
+            <div class="d-flex flex-row justify-content-center">
+                <div class="progress-box mr-5">
+                    <div class="progress active" id="progress1">1</div>
+                    <label for="progress1">เลือกรอบฉาย</lable>
                     </div>
-                    <span>
-                        <div class="carousel-item landscape"  v-for="movie in movies">
-                            <img class="d-block w-100" :src="movie.landscape_src" alt="Second slide">
-                        </div>
-                    </span>
+                    <div class="progress-box mr-5">
+                        <i class="fas fa-angle-right fa-3x"></i>
+                    </div>
+                    <div class="progress-box  mr-5">
+                        <div class="progress active" id="progress2">2</div>
+                        <label for="progress2">เลือกที่นั่ง</lable>
+                    </div>
+                    <div class="progress-box mr-5">
+                        <i class="fas fa-angle-right fa-3x"></i>
+                    </div>
+                    <div class="progress-box mr-5">
+                        <div class="progress" id="progress3">3</div>
+                        <label for="progress3">ชำระเงิน</lable>
+                    </div>
+                    <div class="progress-box mr-5">
+                        <i class="fas fa-angle-right fa-3x"></i>
+                    </div>
+                    <div class="progress-box  mr-5">
+                        <div class="progress" id="progress4">4</div>
+                        <label for="progress4">สำเร็จ</lable>
+                    </div>
+                </div>
+            </div>
+
+        <!-- description -->
+        <div class="container" style="background: #f9f9f9;">
+            <div class="row p-4 mt-1">
+                <div class="col-md-3">
+                    <img :src="movies[4].vertical_src" width="100%" style="box-shadow: 0 15px 37px -5px rgba(54,70,97,.4);">
+                </div>
+                <div class="col-md-9 mt-5">
+                    <h2>{{movies[4].title}}</h2>
+                    <div style="margin-top: 1.5em;margin-bottom: 1.5em;">
+                        <h5>- SYNOPSIS</h5>
+                        <p>
+                            {{ movies[4].desc}}
+                        </p>
+                        <br>
+                        <div class="movie-info">Rate: 13 | 110 Mins</div>
+                        <div class="movie-info">Genre: {{ showGenres(movies[4].generes)}}</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- carousel end -->
-        <div id="movies-list" class="container text-center pt-5">
-            <b style="font-size: 2rem;">
-                    Movies
-                </b>
-            <!-- dropdown-selector -->
-            <div class="container mx-auto mx-5 p-4 text-center">
-                <div class="cinema-dropdown mx-auto p-3">
-                    <div style="width:auto;" class="text-center d-flex justify-content-center">
-                        <div class="d-flex flex-row">
 
-                            <select v-model="selected_genere" name="genres-selector" class="genres-selector">
-                                        <option value="" disabled>select genere</option>
-                                        <option>all generes</option>
-                                        <option>action</option>
-                                        <option>comedy</option>
-                                        <option>sci-fi</option>
-                                        <option>horror</option>
-                                        <option>thriller</option>
-                                        <option>romance</option>
-                                        <option>animated</option>
-                                    </select>
+        <!-- showtime -->
+        <div class="container" style="margin-top: 1em;">
+            <input type="text" id="searchbox" class="form-control mt-4 mb-4" placeholder="ค้นหาโรงภาพยนตร์หรือภาพยนตร์">
 
-                            <div class="cinema-search px-3">
-                                <form>
-                                    <input v-model="searchText" type="search" placeholder="all movies">
-                                </form>
-                            </div>
+            <div class="card">
+                <h5 class="card-header bg-dark text-white">Seacon Cineplex</h5>
+                <div class="card-body mt-4">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">TH</div>
+                        <div class="col-7">
+                            <a href="/select-seat"><button type="button" class="btn btn-outline-secondary">10:00</button></a>
+                            <button type="button" class="btn btn-outline-secondary">11:30</button>
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">16:15</button>
+                            <button type="button" class="btn btn-outline-secondary">18:00</button>
+                            <button type="button" class="btn btn-outline-secondary">20:20</button>
+                            <button type="button" class="btn btn-outline-secondary">22:00</button>
                         </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
+                        <div class="col-7">
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">16:15</button>
+                            <button type="button" class="btn btn-outline-secondary">22:00</button>
+                        </div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
             </div>
-            <!-- dropdown-selector end -->
-            <div class="row py-5">
-                <div class="col-md-4" v-for="movie in movieSearchResult">
-                    <div class="movie-poster m-4">
-                        <a href="/movie.html">
-                            <div class="movie-card bg-main-white">
-                                <img :src="movie.vertical_src" alt="">
-                                <div class="p-3">
-                                    <p>
-                                        <span>RELEASE DATE:</span>
-                                        <span>{{movie.releases_date}}</span>
-                                    </p>
-                                    <h4>
-                                        <span>{{movie.title}}</span>
-                                    </h4>
-                                </div>
-                            </div>
-                        </a>
+
+            <div class="card mt-4">
+                <h5 class="card-header bg-dark text-white">Mega Cineplex</h5>
+                <div class="card-body mt-4">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">TH</div>
+                        <div class="col-7">
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">16:15</button>
+                            <button type="button" class="btn btn-outline-secondary">18:00</button>
+                            <button type="button" class="btn btn-outline-secondary">20:20</button>
+                            <button type="button" class="btn btn-outline-secondary">22:00</button>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
+                        <div class="col-7">
+                            <button type="button" class="btn btn-outline-secondary">13:30</button>
+                            <button type="button" class="btn btn-outline-secondary">20:20</button>
+                        </div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
-
             </div>
         </div>
 
+        <br><br>
     </div>
-    <!-- test -->
-    <!-- <div style="color: transparent">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-    </div> -->
-    <!-- test -->
+
     <!-- footer -->
     <footer class="footer mt-auto ">
         <div class=" p-sidefull container-fluid ">
@@ -368,7 +407,7 @@
                     releases_date: '2019-01-31',
                     vertical_src: 'img/vertical poster/v5.jpg',
                     landscape_src: 'img/landscape poster/l5.jpg',
-                    desc: "-",
+                    desc: 'In 1904 an earthquake of magnitude 5.4 on the Richter scale shook Oslo, with an epicenter in the "Oslo Graben " which runs under the Norwegian capital. There are now signs that indicate that we can expect a major future earthquake in Oslo.',
                     generes: ['action', 'sci-fi', 'thriller']
                 }, {
                     id: 6,
@@ -423,6 +462,15 @@
                     })
                 }
             },
+            methods: {
+                showGenres(generesList) {
+                    showStr = '';
+                    for (let i = 0; i < generesList.length; i++) {
+                        showStr += generesList[i] + ' ';
+                    }
+                    return showStr;
+                }
+            }
         })
     </script>
 
