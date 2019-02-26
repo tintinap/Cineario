@@ -1,6 +1,6 @@
 <template>
     <div>
-    <nav class="navbar navbar-light bg-main-white">
+   <nav class="navbar navbar-light bg-main-white">
         <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
     </nav>
     <div id="nav-bar">
@@ -41,7 +41,7 @@
             <div class="logocontainer">
                 <span v-on:click="setDefault" class="close" title="Close Modal">&times;</span>
                 <!-- <div class="avatar logo">Cineario</div> -->
-                <img style="width: 350px; padding-top: 55px;" src="img/logo.png" alt="">
+                <img style="width: 350px; padding-top: 55px;" src="../assets/img/logo.png" alt="">
             </div>
 
             <div class="container">
