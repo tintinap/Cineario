@@ -92,7 +92,7 @@
                                                             <h4 class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินPromptPay</h4>
                                                         </div>
                                                         <div class="col" style="text-align: center; margin-top: 30px;">
-                                                            <img src="logo.png" style="width: 200px;height: auto;">
+                                                            <img src="../assets/logo.png" style="width: 200px;height: auto;">
                                                         </div>
                                                     </div>
                                                     <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
