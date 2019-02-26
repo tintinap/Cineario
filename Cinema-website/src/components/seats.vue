@@ -165,13 +165,47 @@
 export default {
     data: function() {
         return {
-            seat : '',
+            seats : '',
         }
     },
     methods: {
-        select() {
-            this.$emit('select', this.seat);
-        }
+        selected(seat){
+            this.seats.push(seat)
+        },
+        
+        deleteSeat(seatStatus, seat){
+        for (let index = 0; index < this.seats.length; index++) {
+            if (this.seats[index] === seats) {
+                this.count = index
+                if (seatStatus === 1) {
+                    this.seats.splice(this.count, 1)
+                    this.total_price.splice(0,1)
+                    console.log(this.previous)
+                    this.ans_price -= this.previous
+                }
+                break
+            }else{
+                continue
+            }
+        }},
+      
+
+        UpdatePrice(selected, count, previous_value){
+            this.previous = Number(previous_value)
+            console.log(this.previous)
+            let total_price = {}
+            
+            if (Number(count) === 2){
+                for (let index = 0; index < this.total_price.length; index++) {
+                    if (this.total_price[index] === Number(previous_value)) {
+                        this.total_price.splice(index, 1)
+                        break
+                    }
+                }
+            }
+            this.price = Number(selected)
+            this.total_price.push(this.price)
+        },
     },
     computed: {
         

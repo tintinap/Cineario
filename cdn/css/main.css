@@ -393,20 +393,20 @@
         color: #333740;
     }
 
-    ::-webkit-input-placeholder {
-        text-align: left;
+    #searchbox ::-webkit-input-placeholder {
+        text-align: center;
      }
      
-     :-moz-placeholder { /* Firefox 18- */
-        text-align: left;  
+    #searchbox :-moz-placeholder { /* Firefox 18- */
+        text-align: center;  
      }
      
-     ::-moz-placeholder {  /* Firefox 19+ */
-        text-align: left;  
+    #searchbox ::-moz-placeholder {  /* Firefox 19+ */
+        text-align: center;  
      }
      
-     :-ms-input-placeholder {  
-        text-align: left; 
+    #searchbox :-ms-input-placeholder {  
+        text-align: center; 
      }
 
 input { 
