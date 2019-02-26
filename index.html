@@ -37,7 +37,7 @@
                         <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
-                        <a class="nav-link" href="#">ภาพยนตร์</a>
+                        <a class="nav-link" href="#movies-list" data-scroll="movies-list">ภาพยนตร์</a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
                         <a class="nav-link" href="#">โรงภาพยนตร์</a>
@@ -119,40 +119,40 @@
             </div>
         </div>
         <!-- carousel end -->
-        <!-- dropdown-selector -->
-        <div class="container mx-auto m-5 p-4 text-center">
-            <div class="cinema-dropdown mx-auto p-3">
-                <div style="width:auto;" class="text-center d-flex justify-content-center">
-                    <div class="d-flex flex-row">
-                        <!-- <div class="flex-column col-md-6 mr-4"> -->
-                        <select v-model="selected_genere" name="genres-selector" class="genres-selector">
-                                <option value="" disabled>select genere</option>
-                                <option>all generes</option>
-                                <option>action</option>
-                                <option>comedy</option>
-                                <option>sci-fi</option>
-                                <option>horror</option>
-                                <option>thriller</option>
-                                <option>romance</option>
-                                <option>animated</option>
-                            </select>
-                        <!-- </div> -->
-                        <!-- <div class="flex-column col-md-6 mx-4"> -->
-                        <div class="cinema-search px-3">
-                            <form>
-                                <input v-model="searchText" type="search" placeholder="all movies">
-                            </form>
+        <div id="movies-list" class="container text-center pt-5">
+            <b style="font-size: 2rem;">
+                    Movies
+                </b>
+            <!-- dropdown-selector -->
+            <div class="container mx-auto mx-5 p-4 text-center">
+                <div class="cinema-dropdown mx-auto p-3">
+                    <div style="width:auto;" class="text-center d-flex justify-content-center">
+                        <div class="d-flex flex-row">
+                            <!-- <div class="flex-column col-md-6 mr-4"> -->
+                            <select v-model="selected_genere" name="genres-selector" class="genres-selector">
+                                        <option value="" disabled>select genere</option>
+                                        <option>all generes</option>
+                                        <option>action</option>
+                                        <option>comedy</option>
+                                        <option>sci-fi</option>
+                                        <option>horror</option>
+                                        <option>thriller</option>
+                                        <option>romance</option>
+                                        <option>animated</option>
+                                    </select>
+                            <!-- </div> -->
+                            <!-- <div class="flex-column col-md-6 mx-4"> -->
+                            <div class="cinema-search px-3">
+                                <form>
+                                    <input v-model="searchText" type="search" placeholder="all movies">
+                                </form>
+                            </div>
+                            <!-- </div> -->
                         </div>
-                        <!-- </div> -->
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- dropdown-selector end -->
-        <div class="container text-center">
-            <b style="font-size: 2rem;">
-                Movies
-            </b>
+            <!-- dropdown-selector end -->
             <div class="row py-5">
                 <div class="col-md-4" v-for="movie in movieSearchResult">
                     <div class="movie-poster m-4">
