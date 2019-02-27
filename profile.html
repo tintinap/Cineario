@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cineario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main/main.css" />
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="main/main.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-main-white">
+        <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
+    </nav>
+    <div id="nav-bar">
+        <nav style="margin-top: -5px; position: fixed; width:100%;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down pt-3">
+            <a class="navbar-brand ml-2 logo" href="#"><b>Cineario</b></a>
+            <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="./index.html">หน้าแรก <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="./index.html#movies-list">ภาพยนตร์</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="./cinema.html">โรงภาพยนตร์</a>
+                    </li>
+                </ul>
+                <span class="text-md-right">
+                    <a @click.prevent="openPopup" style="font-size: 12px" id="sign-up" class="nav-item my-2 link " onclick="document.getElementById('sign-in').style.display='block'" href="#">
+                        <span v-if="sign_display === 'Sign-in/Sign-up'">
+                            <i style="color:#191919!important" class="fas fa-sign-in-alt"></i>
+                        </span>
+                <span v-else>
+                            <i style="color:#191919!important" class="fas fa-user"></i>
+                        </span> {{ sign_display }}
+                </a>
+                <a href="./profile.html" class="link ">
+                    <span v-if="sign_display != 'Sign-in/Sign-up'">
+                        <span style="font-size: 12px; color:#191919!important">
+                            View Profile
+                        </span>
+                    </span>
+                </a>
+                </span>
+            </div>
+        </nav>
+    </div>
+
+    <div id="sign-in" class="modal">
+
+        <form class="modal-content animate">
+            <!-- <div class="modal-content animate"> -->
+            <div class="logocontainer">
+                <span v-on:click="setDefault" class="close" title="Close Modal">&times;</span>
+                <!-- <div class="avatar logo">Cineario</div> -->
+                <img style="width: 350px; padding-top: 55px;" src="img/logo.png" alt="">
+            </div>
+
+            <div class="container">
+                <div class="text-center">
+                    <span v-if="signed">
+                        <button @click.prevent="logout" class="btn btn-primary justify-content-center px-4" type="submit">Log out</button>
+                    </span>
+                    <span v-else>
+                        <input class="" :class="{ 'red-holder': uname }" v-model="username" type="text" placeholder="Username" id="uname" required>
+    
+                        <input class="" :class="{ 'red-holder': psw }" v-model="password" type="password" placeholder="Password" id="psw" required><br>
+                        <span v-if="signup">
+                            <input class="" :class="{ 'red-holder': conpsw }" v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
+                        </span>
+
+                    <div class="lower-part">
+                        <span v-if="!signup">
+                                <button @click.prevent="setSignDisplay"style="float: left;" class="btn btn-primary justify-content-left px-4" type="submit">Sign-in</button>
+                                <label style="float: right;" class="justify-content-end">
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me <br>
+                                        <span><a @click.prevent="signup = !signup;
+                                            uname = false
+                                            psw = false
+                                            conpsw = false" href="#">Sign-up</a></span>
+                        </label>
+                        </span>
+                        <span v-else>
+                                <button @click.prevent="checkDisplay" class="btn btn-primary justify-content-center px-4" type="submit">Sign-up</button>
+                            </span>
+                    </div>
+                    </span>
+                </div>
+            </div>
+
+            <!-- </div> -->
+        </form>
+    </div>
+    <!-- end login -->
+
+
+
+    <div id="movies">
+
+        <div class="container" style="border-radius:9px">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                    <div class="panel rounded shadow">
+                        <div class="panel-body">
+                            <div class="inner-all">
+                                <ul class="list-unstyled">
+                                    <li class="text-center">
+                                        <img data-no-retina="" class="img-circle img-responsive img-bordered-primary shadow_2" style="margin-top: 20px;width: 200px;" src="https://image.flaticon.com/icons/svg/236/236831.svg" alt="John Doe">
+                                    </li>
+                                    <li class="text-center">
+                                        <h4 class="text-capitalize" style="margin-top: 10px;">MY PROFILE</h4>
+
+
+                                    </li>
+                                    <li>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-9 btn-group-vertical btn-block" style="text-align: center;">
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"> Edit Profile </button>
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"> Payment</button>
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;margin-bottom: 30px;">Logout</button>
+                                                </div>
+                                                <div class="col-1"></div>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+
+
+
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8" style="margin-top: 30px;">
+                    <!-- start card -->
+
+                    <div class="profile-cover">
+
+                        <h1 style="text-align: center;margin-bottom: 40px">HISTORY</h1>
+
+                        <div class="row">
+                            <div class="col-md-12" style="z-index: 1">
+                                <div>
+                                    <div class="imgshadow" style="width:100%;height: 200px;background: url('https://i.imgur.com/HSWdqv6.jpg') center/cover;z-index: 0;"></div>
+                                    <div style="position: relative;margin-top:-220px;z-index: 9;">
+                                        <div class="container bg-white" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.25);border-radius: 1em;">
+                                            <span v-if="!refund">
+                                            <div class="row p-4">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-7 p-4">
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3>Friend Zone โปรดระวังสิ้นสุดทางเพื่อน</h3>
+                                                            <h5 class="mb-3">CINEMA 11 | Central Pinklaw Cinema</h5>
+                                                            <p><i class="fas fa-volume-up"></i> TH / ENG</ps>
+                                                        </div>
+                                                        <div class="col-md-2"><img src="https://f.ptcdn.info/519/062/000/pn125sisdvjpVS10SAC-o.jpg" width="100%"></div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                            <center>
+                                                                <p>Date</p>
+                                                                <h5>29 May 2018</h5>
+                                                            </center>
+                                                        </div>
+                                                        <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                            <center>
+                                                                <p>Time</p>
+                                                                <h5>13 : 30</h5>
+                                                            </center>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <center>
+                                                                <p>Seat on</p>
+                                                                <h5>F5</h5>
+                                                            </center>
+                                                        </div>
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="status" style="margin-top: -15px;">Payment Success</div>
+                                                </div>
+                                                <div class="col-md-3 p-5">
+                                                    <h4>
+                                                        <center>SEAT PRICE : 180 BAHT</center>
+                                                    </h4><br>
+                                                    <img src="https://i.imgur.com/V3hMAWd.png" width="100%"><br><br>
+                                                    <h3>
+                                                        <center>WMGP25A3T</center>
+                                                    </h3>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+
+                        <span v-if="!refund">
+
+                            <div class="row">
+                                <div class="col-7"></div>
+                                <div class="col-2">
+                                    <button @click="refund = !refund;"type="button" class="btn btn-danger" style="width: 100%;height: 50px; margin-top: -20px;z-index: 99;position: relative;">REFUND</button>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-success" style="width: 100%; height: 50px;margin-top: -20px;z-index: 99;position: relative;" onclick="window.print()">PRINT</button>
+                                </div>
+                                <div class="col-1"></div>
+                        </div>
+                        </span>
+                                            </span>
+
+
+
+                                            <!-- end card  -->
+
+
+                                            <div class="profile-cover" style="margin-top: 30px; ">
+
+                                                <h1 style="text-align: center;margin-bottom: 60px"></h1>
+
+                                                <div class="row">
+                                                    <div class="col-md-12" style="z-index: 1">
+                                                        <div>
+                                                            <div class="imgshadow" style="width:100%;height: 200px;background: url('https://image.flaticon.com/icons/svg/236/236831.svg') center/cover;z-index: 0;"></div>
+                                                            <div style="position: relative;margin-top:-220px;z-index: 9;">
+                                                                <div class="container bg-white" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.25);border-radius: 1em;">
+                                                                    <div class="row p-4">
+                                                                        <div class="col-md-1"></div>
+                                                                        <div class="col-md-7 p-4">
+                                                                            <div class="row">
+                                                                                <div class="col-md-10">
+                                                                                    <h3>Friend Zone โปรดระวังสิ้นสุดทางเพื่อน</h3>
+                                                                                    <h5 class="mb-3">CINEMA 11 | Central Pinklaw Cinema</h5>
+                                                                                    <p><i class="fas fa-volume-up"></i> TH / ENG</ps>
+                                                                                </div>
+                                                                                <div class="col-md-2"><img src="https://f.ptcdn.info/519/062/000/pn125sisdvjpVS10SAC-o.jpg" width="100%"></div>
+                                                                            </div>
+                                                                            <hr>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                                                    <center>
+                                                                                        <p>Date</p>
+                                                                                        <h5>29 May 2018</h5>
+                                                                                    </center>
+                                                                                </div>
+                                                                                <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                                                    <center>
+                                                                                        <p>Time</p>
+                                                                                        <h5>13 : 30</h5>
+                                                                                    </center>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <center>
+                                                                                        <p>Seat on</p>
+                                                                                        <h5>F5</h5>
+                                                                                    </center>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br><br>
+                                                                            <a class="link" href="./index.html">
+                                                                                <div class="status" style="margin-top: -15px;">Payment Success</div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-md-3 p-5">
+                                                                            <h4>
+                                                                                <center>SEAT PRICE : 180 BAHT</center>
+                                                                            </h4><br>
+                                                                            <img src="https://i.imgur.com/V3hMAWd.png" width="100%"><br><br>
+                                                                            <h3>
+                                                                                <center>WMGP25A3T</center>
+                                                                            </h3>
+                                                                        </div>
+                                                                        <div class="col-md-1"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container" style="margin-bottom: 50px;">
+                                        <div class="row">
+                                            <div class="col-7"></div>
+                                            <div class="col-2">
+                                                <button type="button" class="btn btn-danger" style="width: 100%;height: 50px; margin-top: -20px;z-index: 99;position: relative;">REFUND</button>
+                                            </div>
+                                            <div class="col-2">
+                                                <button type="button" class="btn btn-success" style="width: 100%; height: 50px;margin-top: -20px;z-index: 99;position: relative;" onclick="window.print()">PRINT</button>
+                                            </div>
+                                            <div class="col-1"></div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                        <!-- footer -->
+                        <footer class="footer mt-auto ">
+                            <div class=" p-sidefull container-fluid ">
+                                <div class="footer bg-main-white ">
+                                    <div class="row">
+                                        <div class=" col-md-4 p-5 ">
+                                            <div class="footer-logo d-flex justify-content-between logo">Cineario</div>
+                                        </div>
+                                        <div class="col-md-4 p-5 text-center ">
+                                            <div class="row social-media d-flex justify-content-center ">
+                                                <div class="col-md-2 ">
+                                                    <a href="# "><i class="fab fa-instagram link-reverse "></i></a>
+                                                </div>
+                                                <div class="col-md-2 ">
+                                                    <a href="# "><i class="fab fa-facebook-square link-reverse "></i></a>
+                                                </div>
+                                                <div class="col-md-2 ">
+                                                    <a href="# "><i class="fab fa-twitter link-reverse "></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" col-md-4 pt-4 pb-5 px-5 ">
+                                            <div class="row d-flex justify-content-end social-media ">
+                                                Cineario Cineplex
+                                            </div>
+                                            <div class="row d-flex justify-content-end link ">
+                                                <a href="#">Contact our support</a>
+                                            </div>
+                                            <div class="row d-flex justify-content-end link ">
+                                                <a href="#">About us</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- JavaScript Part  -->
+                        <script name="authen-system">
+                            var auth = new Vue({
+                                el: "#sign-in",
+                                data: {
+                                    signup: false,
+                                    signed: false,
+                                    btntext: 'Sign-in',
+                                    username: '',
+                                    password: '',
+                                    confirmpass: '',
+                                    uname: false,
+                                    psw: false,
+                                    conpsw: false,
+                                },
+                                methods: {
+                                    setSignDisplay() {
+                                        console.log('setting..')
+                                        if ((!(this.username === '') && this.username.length < 9) &&
+                                            (!(this.password === '')) && this.password.length > 5) {
+                                            console.log("changing");
+
+                                            nav.sign_display = this.username;
+                                            this.username = ''
+                                            this.password = ''
+                                            this.confirmpass = ''
+                                            this.signed = true;
+                                            if ((this.uname && this.psw && this.conpsw)) {
+                                                console.log('removing RED-HOLDER');
+                                                this.uname = false;
+                                                this.psw = false;
+                                                this.conpsw = false;
+                                            }
+                                            document.getElementById('sign-in').style.display = 'none'
+                                        } else {
+                                            console.log("nochange");
+                                            console.log('Adding RED-HOLDER');
+                                            this.uname = true;
+                                            this.psw = true;
+                                            this.conpsw = true;
+                                        }
+                                    },
+
+                                    logout() {
+                                        console.log("logout")
+                                        nav.sign_display = "Sign-in/Sign-up";
+                                        this.signed = false;
+                                        document.getElementById('sign-in').style.display = 'none'
+                                    },
+                                    checkDisplay() {
+                                        console.log("value missing")
+                                        if ((!(this.username === '') && this.username.length < 9) &&
+                                            (!(this.password === '') && this.password.length > 5) &&
+                                            (!(this.confirmpass === '')) && this.password.length > 5) {
+                                            console.log("convert signup")
+                                            this.signup = !this.signup
+                                            if ((this.uname && this.psw && this.conpsw)) {
+                                                console.log('removing RED-HOLDER');
+                                                this.uname = false;
+                                                this.psw = false;
+                                                this.conpsw = false;
+                                            }
+                                        } else {
+                                            console.log('Adding RED-HOLDER');
+                                            this.uname = true;
+                                            this.psw = true;
+                                            this.conpsw = true;
+                                        }
+                                    },
+                                    setDefault() { //unfinish
+                                        console.log('set default');
+                                        this.signup = false
+                                        this.signed = false
+                                        this.btntext = 'Sign-in'
+                                        this.username = ''
+                                        this.password = ''
+                                        this.confirmpass = ''
+                                        if ((this.uname && this.psw && this.conpsw)) {
+                                            console.log('removing RED-HOLDER');
+                                            this.uname = false;
+                                            this.psw = false;
+                                            this.conpsw = false;
+                                        }
+                                        document.getElementById('sign-in').style.display = 'none'
+                                    }
+                                },
+                            });
+                            var nav = new Vue({
+                                el: '#nav-bar',
+                                data: {
+                                    sign_display: 'Sign-in/Sign-up',
+
+                                },
+                                methods: {
+                                    openPopup() {
+                                        if ((this.uname && this.psw && this.conpsw)) {
+                                            console.log('removing RED-HOLDER');
+                                            auth.uname = false;
+                                            auth.psw = false;
+                                            auth.conpsw = false;
+                                        }
+                                    },
+                                }
+                            });
+                        </script>
+
+                        <script name="movies-dataset">
+                            var mov = new Vue({
+                                el: '#movies',
+                                data: {
+                                    movies: [{
+                                        id: 1,
+                                        title: 'Captain America: The Winter Soldier',
+                                        releases_date: '2014-04-04',
+                                        vertical_src: 'img/vertical poster/v1.jpg',
+                                        landscape_src: 'img/landscape poster/l1.jpg',
+                                        desc: "-",
+                                        generes: ['action', 'sci-fi']
+                                    }, {
+                                        id: 2,
+                                        title: 'Friend Zone',
+                                        releases_date: '2019-02-14',
+                                        vertical_src: 'img/vertical poster/v2.jpg',
+                                        landscape_src: 'img/landscape poster/l2.jpg',
+                                        desc: "-",
+                                        generes: ['comedy', 'romance']
+                                    }, {
+                                        id: 3,
+                                        title: 'Alita : Battle Angel',
+                                        releases_date: '2014-04-04',
+                                        vertical_src: 'img/vertical poster/v3.jpg',
+                                        landscape_src: 'img/landscape poster/l3.jpg',
+                                        desc: "-",
+                                        generes: ['action', 'sci-fi']
+                                    }, {
+                                        id: 4,
+                                        title: 'The Lego Movie 2',
+                                        releases_date: '2019-02-08',
+                                        vertical_src: 'img/vertical poster/v4.jpg',
+                                        landscape_src: 'img/landscape poster/l4.jpg',
+                                        desc: "-",
+                                        generes: ['action', 'comedy', 'animated']
+                                    }, {
+                                        id: 5,
+                                        title: 'Escape Room',
+                                        releases_date: '2019-01-31',
+                                        vertical_src: 'img/vertical poster/v5.jpg',
+                                        landscape_src: 'img/landscape poster/l5.jpg',
+                                        desc: 'In 1904 an earthquake of magnitude 5.4 on the Richter scale shook Oslo, with an epicenter in the "Oslo Graben " which runs under the Norwegian capital. There are now signs that indicate that we can expect a major future earthquake in Oslo.',
+                                        generes: ['action', 'sci-fi', 'thriller']
+                                    }, {
+                                        id: 6,
+                                        title: 'Captain Marvel',
+                                        releases_date: '2019-03-08',
+                                        vertical_src: 'img/vertical poster/v6.jpg',
+                                        landscape_src: 'img/landscape poster/l6.jpg',
+                                        desc: "-",
+                                        generes: ['action', 'sci-fi']
+                                    }, {
+                                        id: 7,
+                                        title: 'How to train your dragon : The Hidden World',
+                                        releases_date: '2019-01-03',
+                                        vertical_src: 'img/vertical poster/v7.jpg',
+                                        landscape_src: 'img/landscape poster/l7.jpg',
+                                        desc: "-",
+                                        generes: ['action', 'romance', 'animated']
+                                    }, {
+                                        id: 8,
+                                        title: 'Happy Death Day 2U',
+                                        releases_date: '2019-02-14',
+                                        vertical_src: 'img/vertical poster/v8.jpg',
+                                        landscape_src: 'img/landscape poster/l8.jpg',
+                                        desc: "-",
+                                        generes: ['horror']
+                                    }, {
+                                        id: 9,
+                                        title: 'รักไม่เป็นภาษา',
+                                        releases_date: '2019-01-31',
+                                        vertical_src: 'img/vertical poster/v9.jpg',
+                                        landscape_src: 'img/landscape poster/l9.jpg',
+                                        desc: "-",
+                                        generes: ['comedy', 'romance']
+                                    }, ],
+                                    cinemas: [{
+                                            cname: 'Quartier CineArt',
+                                            th: ["12.30", "13.00", "16.30", "21.30", "22.30", "24.00"],
+                                            en: ["13.30", "14.00", "15.00", "20.00", "21.40"]
+                                        }, {
+                                            cname: 'Paragon Cineplex',
+                                            th: ["9.30", "10.00", "12.10", "13.30", "14.30", "16.00", "18.00", "20.20"],
+                                            en: ["13.30", "14.30", "17.20", "20.00", "20.30", ]
+                                        }, {
+                                            cname: 'Major Cineplex Sukhumvit',
+                                            th: ["9.30", "11.00", "12.50", "12.30", "17.30", "17.50", "19.00", "20.20", "21.20"],
+                                            en: ["10.30", "15.30", "17.00", "22.00"]
+                                        }, {
+                                            cname: 'Major Cineplex Samsen',
+                                            th: ["13.30", "14.00", "15.00", "20.00", "21.40"],
+                                            en: ["11.30", "15.00", "15.30", "21.30"]
+                                        },
+
+                                    ],
+                                    searchText: '',
+                                    selected_genere: '',
+                                    refund: false,
+                                    refund1: false,
+                                },
+                                computed: {
+                                    movieSearchResult() {
+                                        return this.movies.filter(movie => {
+                                            let searchText = this.searchText.toLowerCase()
+                                            let selectedGenere = this.selected_genere
+
+                                            let matchTitle = movie.title.toLowerCase().includes(searchText)
+                                            let matchGeneres = movie.generes.includes(selectedGenere)
+
+                                            if (selectedGenere === 'all generes' || selectedGenere === '') {
+                                                return matchTitle
+                                            } else {
+                                                return matchTitle && matchGeneres
+                                            }
+                                        })
+                                    },
+
+                                    cinemaSearchResult() {
+                                        return this.cinemas.filter(cinema => {
+                                            let searchText = this.searchText.toLowerCase()
+
+                                            let matchCinema = cinema.cname.toLowerCase().includes(searchText)
+
+                                            return matchCinema
+                                        })
+                                    }
+                                },
+                                methods: {
+                                    showGenres(generesList) {
+                                        showStr = '';
+                                        for (let i = 0; i < generesList.length; i++) {
+                                            showStr += generesList[i] + ' ';
+                                        }
+                                        return showStr;
+                                    }
+                                }
+                            })
+                        </script>
+
+                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
+</body>
+
+</html>
