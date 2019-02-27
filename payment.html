@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
                     <li class="nav-item" style="margin-right: 1em;">
-                        <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html">หน้าแรก <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
                         <a class="nav-link" href="./index.html#movies-list">ภาพยนตร์</a>
@@ -110,88 +110,211 @@
         </form>
     </div>
     <!-- end login -->
-    <!-- carousel -->
-    <div id="movies">
 
-        <div class="poster-slide">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active lanscape">
-                        <img class="d-block w-100" src="img/landscape poster/l5.jpg" alt="First slide">
-                    </div>
-                    <span>
-                        <div class="carousel-item landscape"  v-for="movie in movies">
-                            <img class="d-block w-100" :src="movie.landscape_src" alt="Second slide">
-                        </div>
-                    </span>
-                </div>
+
+    <!-- progress bar -->
+    <div class="container d-flex flex-row justify-content-center mt-5 mb-3">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="progress-box mr-5">
+                <div class="progress" id="progress1">1</div>
+                <label for="progress1">เลือกรอบฉาย</lable>
+            </div>
+            <div class="progress-box mr-5">
+                <i class="fas fa-angle-right fa-3x"></i>
+            </div>
+            <div class="progress-box mr-5">
+                <div class="progress" id="progress2">2</div>
+                <label for="progress2">เลือกที่นั่ง</lable>
+            </div>
+            <div class="progress-box mr-5">
+                <i class="fas fa-angle-right fa-3x"></i>
+            </div>
+            <div class="progress-box mr-5">
+                <div class="progress active" id="progress3">3</div>
+                <label for="progress3">ชำระเงิน</lable>
+            </div>
+            <div class="progress-box mr-5">
+                <i class="fas fa-angle-right fa-3x"></i>
+            </div>
+            <div class="progress-box  mr-5">
+                <div class="progress" id="progress4">4</div>
+                <label for="progress4">สำเร็จ</lable>
             </div>
         </div>
-        <!-- carousel end -->
-        <div id="movies-list" class="container text-center pt-5">
-            <b style="font-size: 2rem;">
-                    Movies
-                </b>
-            <!-- dropdown-selector -->
-            <div class="container mx-auto mx-5 p-4 text-center">
-                <div class="cinema-dropdown mx-auto p-3">
-                    <div style="width:auto;" class="text-center d-flex justify-content-center">
-                        <div class="d-flex flex-row">
+    </div>
 
-                            <select v-model="selected_genere" name="genres-selector" class="genres-selector">
-                                        <option value="" disabled>select genere</option>
-                                        <option>all generes</option>
-                                        <option>action</option>
-                                        <option>comedy</option>
-                                        <option>sci-fi</option>
-                                        <option>horror</option>
-                                        <option>thriller</option>
-                                        <option>romance</option>
-                                        <option>animated</option>
-                                    </select>
+	<!-- description -->
+    <div class="paymenttotal center" id="vue2">ยอดชำระ 500 บาท </div>
 
-                            <div class="cinema-search px-3">
-                                <form>
-                                    <input v-model="searchText" type="search" placeholder="all movies">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- dropdown-selector end -->
-            <div class="row py-5">
-                <div class="col-md-4" v-for="movie in movieSearchResult">
-                    <div class="movie-poster m-4">
-                        <a href="/movie.html">
-                            <div class="movie-card bg-main-white">
-                                <img :src="movie.vertical_src" alt="">
-                                <div class="p-3">
-                                    <p>
-                                        <span>RELEASE DATE:</span>
-                                        <span>{{movie.releases_date}}</span>
-                                    </p>
-                                    <h4>
-                                        <span>{{movie.title}}</span>
-                                    </h4>
+    <div class="container margindown4em" style="align-items: center;">
+    <div class="row margindown4em">
+    <div class="col-3"></div>  
+        
+    <aside class="col-7">
+        <article class="card shadow_1 ">
+        <!--start 2 button buy and book -->
+                <ul class="nav bg-light nav-pills rounded nav-fill em2" role="tablist">
+                    <li class="nav-item shadow_2">
+                        <a class="nav-link active" data-toggle="pill" href="#pay">ซื้อตั๋วภาพยนตร์<hr><i class="fas fa-shopping-cart"></i></a></li>
+                    <li class="nav-item shadow_2">
+                        <a class="nav-link" data-toggle="pill" href="#test">จองตั๋วภาพยนตร์ <hr><i class="fas fa-film"></i></a>
+                    </li>
+                </ul>
+        <!--end 2 button buy and book -->
+       
+        <div class="card-body"> <!-- start card-body  -->
+            <div class="tab-content"> <!-- start tab-content -->
+                    <div class="tab-pane active" id="pay" ><!-- start number 1 tab-content buy ticket -->
+                        <form>
+                            <div class="center marup50 em2">เลือกช่องทางชำระเงิน</div>
+                <!-- start 3 button card pay moviecard-->
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-lg-10" style="text-align: center;">
+                                        <ul class="nav bg-light nav-pills rounded nav-fill  mb-5" role="tablist">
+                                            <li class="nav-item shadow_2"><a class="nav-link active" data-toggle="pill" href="#nav-tab-card"><i class="fa fa-credit-card "></i>&nbsp; CreditCard</a></li>
+                                            <li class="nav-item  shadow_2" style="margin-right:10px;margin-left:10px;"><a class="nav-link" data-toggle="pill" href="#nav-tab-paypal"><i class="fab fa-paypal"></i> &nbsp;PromptPay</a></li>
+                                            <li class="nav-item shadow_2" ><a class="nav-link" data-toggle="pill" href="#nav-tab-bank"><i class="fas fa-chalkboard-teacher"> </i> &nbsp;&nbsp;&nbsp;Movie Card</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-1"></div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                 <!-- end 3 button card pay moviecard-->
 
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <!-- start  carditCard form-->
+                                            <div class="tab-content margindown4em">
+
+
+                                                <div class="tab-pane  show active" id="nav-tab-card" style="margin: 0 auto;">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ถือบัตร" required="">
+                                                        </div>
+                                                            <div class="form-group">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" name="cardNumber" placeholder="หมายเลขบัตร" required  pattern="[0-9]{16}">
+                                                                        <div class="input-group-append">
+                                                                        <span class="input-group-text ">
+                                                                            <i class="fab fa-cc-visa"></i>   
+                                                                            <i class="fab fa-cc-amex"></i>   
+                                                                            <i class="fab fa-cc-mastercard"></i> 
+                                                                        </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            <div class="row">
+                                                                <div class="col-sm-8">
+                                                                    <div class="form-group">
+                                                                        <label class="hidden-xs">Expiration</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" placeholder="MM" required pattern="[0-9]{2}">
+                    <input type="number" class="form-control " placeholder="YY" required pattern="[0-9]{2}">
+                </div>
             </div>
         </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>CVV <i class="fa fa-question-circle"></i></label>
+                <input type="number" class="form-control" pattern="[0-9]{3}">
+            </div>
+        </div>
+    </div>
+    <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
+    </form>
+    </div>
+
+    <div class="tab-pane fade" id="nav-tab-paypal">
+        <div class="row em12">
+            <div class="col-sm-12">
+                <h4 class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินPromptPay</h4>
+            </div>
+            <div class="col" style="text-align: center; margin-top: 30px;">
+                <img src="../assets/logo.png" style="width: 200px;height: auto;">
+            </div>
+        </div>
+        <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
+    </div>
+
+    <div class="tab-pane fade" id="nav-tab-bank">
+        <div class="row em12">
+            <p class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินด้วย MovieCard</p>
+            <div class="col-lg-12 center">
+                <input type="text" class="form-control" name="cardNumber1" placeholder="รหัสหน้าบัตร 16 หลัก" required="" pattern="[0-9]{16}">
+                <p class="marup10"></p>
+                <input type="text" class="form-control" name="cardNumber2" placeholder="PIN ด้านหลังบัตร" required>
+            </div>
+        </div>
+        <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
+    </div>
 
     </div>
-    <!-- test -->
-    <!-- <div style="color: transparent">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-    </div> -->
-    <!-- test -->
+    <!-- end  carditCard form-->
+    </div>
+    <!-- end  row-->
+    </div>
+    <!-- close 8 col -->
+    </div>
+    <!-- end  row-->
+    </div>
+    <!-- end  container creditcard-->
+    </form>
+    <!--end form-->
+    </div>
+    <!--end all buy ticket -->
+
+
+    <!-- book form -->
+    <div class="tab-pane fade margindown4em" id="test">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 center">
+                    <h1 class="headmargin">ยืนยันการจองตั๋วภาพยนตร์</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <form>
+                        <div class="row em12">
+                            <p>กรุณากรอกข้อมูลสำหรับการจองตั๋วชมภาพยนตร์</p>
+                            <div class="col-lg-12 ">
+                                <p>E-mail</p>
+                                <input type="email" class="form-control" name="cardNumber" required="">
+                                <p class="marup10">เบอร์โทร</p>
+                                <input type="text" class="form-control" name="cardNumber" required="">
+                            </div>
+                        </div>
+                        <button href="./ticket.html" class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-toggle="modal">Confirm</button>
+                    </form>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- / book form -->
+
+
+
+    </div>
+    </div>
+    <!-- end card body-->
+    </article>
+    <!--end card-->
+    </aside>
+    <!--end 7 col -->
+    </div>
+    <!-- super row-->
+    </div>
+    <!-- super container -->
+
+
     <!-- footer -->
     <footer class="footer mt-auto ">
         <div class=" p-sidefull container-fluid ">
@@ -377,7 +500,7 @@
                     releases_date: '2019-01-31',
                     vertical_src: 'img/vertical poster/v5.jpg',
                     landscape_src: 'img/landscape poster/l5.jpg',
-                    desc: "-",
+                    desc: 'In 1904 an earthquake of magnitude 5.4 on the Richter scale shook Oslo, with an epicenter in the "Oslo Graben " which runs under the Norwegian capital. There are now signs that indicate that we can expect a major future earthquake in Oslo.',
                     generes: ['action', 'sci-fi', 'thriller']
                 }, {
                     id: 6,
@@ -412,6 +535,25 @@
                     desc: "-",
                     generes: ['comedy', 'romance']
                 }, ],
+                cinemas: [{
+                        cname: 'Quartier CineArt',
+                        th: ["12.30", "13.00", "16.30", "21.30", "22.30", "24.00"],
+                        en: ["13.30", "14.00", "15.00", "20.00", "21.40"]
+                    }, {
+                        cname: 'Paragon Cineplex',
+                        th: ["9.30", "10.00", "12.10", "13.30", "14.30", "16.00", "18.00", "20.20"],
+                        en: ["13.30", "14.30", "17.20", "20.00", "20.30", ]
+                    }, {
+                        cname: 'Major Cineplex Sukhumvit',
+                        th: ["9.30", "11.00", "12.50", "12.30", "17.30", "17.50", "19.00", "20.20", "21.20"],
+                        en: ["10.30", "15.30", "17.00", "22.00"]
+                    }, {
+                        cname: 'Major Cineplex Samsen',
+                        th: ["13.30", "14.00", "15.00", "20.00", "21.40"],
+                        en: ["11.30", "15.00", "15.30", "21.30"]
+                    },
+
+                ],
                 searchText: '',
                 selected_genere: '',
             },
@@ -430,8 +572,27 @@
                             return matchTitle && matchGeneres
                         }
                     })
+                },
+
+                cinemaSearchResult() {
+                    return this.cinemas.filter(cinema => {
+                        let searchText = this.searchText.toLowerCase()
+
+                        let matchCinema = cinema.cname.toLowerCase().includes(searchText)
+
+                        return matchCinema
+                    })
                 }
             },
+            methods: {
+                showGenres(generesList) {
+                    showStr = '';
+                    for (let i = 0; i < generesList.length; i++) {
+                        showStr += generesList[i] + ' ';
+                    }
+                    return showStr;
+                }
+            }
         })
     </script>
 

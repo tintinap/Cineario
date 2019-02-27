@@ -43,13 +43,23 @@
                         <a class="nav-link" href="./cinema.html">โรงภาพยนตร์</a>
                     </li>
                 </ul>
-                <a @click.prevent="openPopup" style="font-size: 12px" id="sign-up" class="nav-item my-2 link text-md-right" onclick="document.getElementById('sign-in').style.display='block'" href="#">
-                    <span v-if="sign_display === 'Sign-in/Sign-up'">
-                    <i style="color:#191919!important" class="fas fa-sign-in-alt"></i>
+                <span class="text-md-right">
+                    <a @click.prevent="openPopup" style="font-size: 12px" id="sign-up" class="nav-item my-2 link " onclick="document.getElementById('sign-in').style.display='block'" href="#">
+                        <span v-if="sign_display === 'Sign-in/Sign-up'">
+                            <i style="color:#191919!important" class="fas fa-sign-in-alt"></i>
+                        </span>
+                <span v-else>
+                            <i style="color:#191919!important" class="fas fa-user"></i>
+                        </span> {{ sign_display }}
+                </a>
+                <a href="./profile.html" class="link ">
+                    <span v-if="sign_display != 'Sign-in/Sign-up'">
+                        <span style="font-size: 12px; color:#191919!important">
+                            View Profile
+                        </span>
+                    </span>
+                </a>
                 </span>
-                    <span v-else>
-                    <i style="color:#191919!important" class="fas fa-user"></i>
-                </span> {{ sign_display }}</a>
             </div>
         </nav>
     </div>
@@ -167,7 +177,9 @@
                         <div class="col-1" style="border-right: 1px solid #000;">TH</div>
                         <div class="col-7">
                             <span v-for="r_th in cinema.th">
-                                <button type="button" class="btn btn-outline-secondary m-2">{{r_th}}</button>
+                                <a href="./selectiveSeat.html">
+                                    <button type="button" class="btn btn-outline-secondary m-2">{{r_th}}</button>
+                                </a>
                             </span>
                         </div>
                         <div class="col-1"></div>
@@ -178,7 +190,9 @@
                         <div class="col-1" style="border-right: 1px solid #000;">ENG</div>
                         <div class="col-7">
                             <span v-for="r_en in cinema.en">
-                                <button type="button" class="btn btn-outline-secondary m-2">{{r_en}}</button>
+                                <a href="./selectiveSeat.html">
+                                    <button type="button" class="btn btn-outline-secondary m-2">{{r_en}}</button>
+                                </a>
                             </span>
                         </div>
                         <div class="col-1"></div>

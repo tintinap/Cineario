@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
                     <li class="nav-item" style="margin-right: 1em;">
-                        <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html">หน้าแรก <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item" style="margin-right: 1em;">
                         <a class="nav-link" href="./index.html#movies-list">ภาพยนตร์</a>
@@ -110,89 +110,83 @@
         </form>
     </div>
     <!-- end login -->
-    <!-- carousel -->
-    <div id="movies">
 
-        <div class="poster-slide">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active lanscape">
-                        <img class="d-block w-100" src="img/landscape poster/l5.jpg" alt="First slide">
-                    </div>
-                    <span>
-                        <div class="carousel-item landscape"  v-for="movie in movies">
-                            <img class="d-block w-100" :src="movie.landscape_src" alt="Second slide">
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <!-- carousel end -->
-        <div id="movies-list" class="container text-center pt-5">
-            <b style="font-size: 2rem;">
-                    Movies
-                </b>
-            <!-- dropdown-selector -->
-            <div class="container mx-auto mx-5 p-4 text-center">
-                <div class="cinema-dropdown mx-auto p-3">
-                    <div style="width:auto;" class="text-center d-flex justify-content-center">
-                        <div class="d-flex flex-row">
+	<div class="container-fluid" style="background: url('https://i.imgur.com/MXeKOwy.jpg') center/cover no-repeat;height: 300px;position: inherit;">
+		<h1 class="text-light center" style="font-size: 5em;position: inherit;bottom:0px;text-shadow:1px 9px 5px #000000 ;"><br>CINEARIO CINEMA</h1>
+	</div>
+	<br><br>
+	<div class="container">
+		<h2><center>โรงภาพยนตร์ทั้งหมดของเรา</center></h2><br>
+		<div class="row">
+		  <div class="col-sm-3">
+		    <div class="card p-3 bg-danger text-white">
+		      <div class="card-body">
+		        <h5 class="card-title"><center>Quartier CineArt</center></h5>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-3">
+		    <div class="card p-3 bg-danger text-white">
+		      <div class="card-body">
+		        <h5 class="card-title"><center>Paragon Cineplex</center></h5>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-3">
+		    <div class="card p-3 bg-danger text-white">
+		      <div class="card-body">
+		        <h5 class="card-title"><center>Major Sukhumvit</center></h5>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-3">
+		    <div class="card p-3 bg-danger text-white">
+		      <div class="card-body">
+		        <h5 class="card-title"><center>Major Samsen</center></h5>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 
-                            <select v-model="selected_genere" name="genres-selector" class="genres-selector">
-                                        <option value="" disabled>select genere</option>
-                                        <option>all generes</option>
-                                        <option>action</option>
-                                        <option>comedy</option>
-                                        <option>sci-fi</option>
-                                        <option>horror</option>
-                                        <option>thriller</option>
-                                        <option>romance</option>
-                                        <option>animated</option>
-                                    </select>
+	<br><br><br>
+	<div class="container">
+		<h2 style="text-shadow: 1px 1px 5px #000;"><center>Sponsor</center></h2><br>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-sm-3">
+				<img src="./img/logo/1.png" width="150px" height="100px">
+			</div>
+			<div class="col-sm-3">
+				<img src="./img/logo/2.jpg" width="150px" height="100px">
+			</div>
+			<div class="col-sm-3" style="margin-top: -40px;">
+				<img src="./img/logo/3.png" width="200px" height="160px">
+			</div>
+			<div class="col-sm-3">
+				<img src="./img/logo/4.jpg" width="150px" height="100px">
+			</div>
+		</div>
+		<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
+			<div class="col-sm-3">
+				<img src="./img/logo/5.png" width="150px" height="100px">
+			</div>
+			<div class="col-sm-3">
+				<img src="./img/logo/6.png" width="200px" height="80px">
+			</div>
+			<div class="col-sm-3">
+				<img src="./img/logo/7.png" width="150px" height="100px">
+			</div>
+			<div class="col-sm-3">
+				<img src="./img/logo/8.png" width="150px" height="100px">
+			</div>
+		</div>
+		
 
-                            <div class="cinema-search px-3">
-                                <form>
-                                    <input v-model="searchText" type="search" placeholder="all movies">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- dropdown-selector end -->
-            <div class="row py-5">
-                <div class="col-md-4" v-for="movie in movieSearchResult">
-                    <div class="movie-poster m-4">
-                        <a href="/movie.html">
-                            <div class="movie-card bg-main-white">
-                                <img :src="movie.vertical_src" alt="">
-                                <div class="p-3">
-                                    <p>
-                                        <span>RELEASE DATE:</span>
-                                        <span>{{movie.releases_date}}</span>
-                                    </p>
-                                    <h4>
-                                        <span>{{movie.title}}</span>
-                                    </h4>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+		
 
-            </div>
-        </div>
+	</div>
 
-    </div>
-    <!-- test -->
-    <!-- <div style="color: transparent">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque provident nesciunt quas maxime unde facilis numquam dolore non ab, quisquam molestiae consequatur tempora necessitatibus eligendi excepturi ullam quaerat ipsam?</h1>
-    </div> -->
-    <!-- test -->
-    <!-- footer -->
+       <!-- footer -->
     <footer class="footer mt-auto ">
         <div class=" p-sidefull container-fluid ">
             <div class="footer bg-main-white ">
@@ -377,7 +371,7 @@
                     releases_date: '2019-01-31',
                     vertical_src: 'img/vertical poster/v5.jpg',
                     landscape_src: 'img/landscape poster/l5.jpg',
-                    desc: "-",
+                    desc: 'In 1904 an earthquake of magnitude 5.4 on the Richter scale shook Oslo, with an epicenter in the "Oslo Graben " which runs under the Norwegian capital. There are now signs that indicate that we can expect a major future earthquake in Oslo.',
                     generes: ['action', 'sci-fi', 'thriller']
                 }, {
                     id: 6,
@@ -412,6 +406,31 @@
                     desc: "-",
                     generes: ['comedy', 'romance']
                 }, ],
+                cinemas: [
+                    {
+                        cname: 'Quartier CineArt',
+                        th: ["12.30", "13.00", "16.30", "21.30", "22.30", "24.00"],
+                        en: ["13.30", "14.00", "15.00", "20.00", "21.40"]
+                    },
+                    {
+                        cname: 'Paragon Cineplex',
+                        th: ["9.30", "10.00", "12.10", "13.30", "14.30"
+                            , "16.00", "18.00", "20.20"],
+                        en: ["13.30", "14.30", "17.20", "20.00", "20.30",]
+                    },
+                    {
+                        cname: 'Major Cineplex Sukhumvit',
+                        th: ["9.30", "11.00", "12.50", "12.30", "17.30"
+                            , "17.50", "19.00", "20.20", "21.20"],
+                        en: ["10.30", "15.30", "17.00", "22.00"]
+                    },
+                    {
+                        cname: 'Major Cineplex Samsen',
+                        th: ["13.30", "14.00", "15.00", "20.00", "21.40"],
+                        en: ["11.30", "15.00", "15.30", "21.30"]
+                    },
+
+                ],
                 searchText: '',
                 selected_genere: '',
             },
@@ -430,8 +449,27 @@
                             return matchTitle && matchGeneres
                         }
                     })
+                },
+
+                cinemaSearchResult() {
+                    return this.cinemas.filter(cinema => {
+                        let searchText = this.searchText.toLowerCase()
+                        
+                        let matchCinema = cinema.cname.toLowerCase().includes(searchText)
+
+                        return matchCinema
+                    })
                 }
             },
+            methods: {
+                showGenres(generesList) {
+                    showStr = '';
+                    for (let i = 0; i < generesList.length; i++) {
+                        showStr += generesList[i] + ' ';
+                    }
+                    return showStr;
+                }
+            }
         })
     </script>
 
