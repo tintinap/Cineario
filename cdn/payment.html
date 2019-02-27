@@ -71,7 +71,7 @@
         <div class="card-body"> <!-- start card-body  -->
             <div class="tab-content"> <!-- start tab-content -->
                     <div class="tab-pane active" id="pay" ><!-- start number 1 tab-content buy ticket -->
-                        <form novalidate>
+                        
                             <div class="center marup50 em2">เลือกช่องทางชำระเงิน</div>
                 <!-- start 3 button card pay moviecard-->
                                 <div class="row">
@@ -94,12 +94,12 @@
                                         <div class="row">
                                             <!-- start  carditCard form-->
                                             <div class="tab-content margindown4em">
-
-
+                                              
                                                 <div class="tab-pane  show active" id="nav-tab-card" style="margin: 0 auto;">
-                                                    <form>
+                                                      <form >
+
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ถือบัตร" required="">
+                                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ถือบัตร" required>
                                                         </div>
                                                             <div class="form-group">
                                                                 <div class="input-group">
@@ -119,20 +119,21 @@
                                                                     <div class="form-group">
                                                                         <label class="hidden-xs">Expiration</label>
                                                                         <div class="input-group">
-                                                                            <input type="number" class="form-control" placeholder="MM" required  pattern="[0-9]{2}">
-                                                                            <input type="number" class="form-control " placeholder="YY" required  pattern="[0-9]{2}">
+                                                                            <input type="number" class="form-control" placeholder="MM" required  pattern="[0-9]{2}" required>
+                                                                            <input type="number" class="form-control " placeholder="YY" required  pattern="[0-9]{2}" required>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group">
                                                                         <label>CVV <i class="fa fa-question-circle"></i></label>
-                                                                        <input type="number" class="form-control"  pattern="[0-9]{3}">
+                                                                        <input type="number" class="form-control"  pattern="[0-9]{3}" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
-                                                    </form>
+
+                                                </form>
                                                 </div>
 
                                                 <div class="tab-pane fade" id="nav-tab-paypal">
@@ -141,15 +142,16 @@
                                                             <h4 class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินPromptPay</h4>
                                                         </div>
                                                         <div class="col" style="text-align: center; margin-top: 30px;">
-                                                            <img src="../assets/logo.png" style="width: 200px;height: auto;">
+                                                            <img src="assets/qrcode.png" style="width: 200px;height: auto;">
                                                         </div>
                                                     </div>
                                                     <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
                                                 </div>
-
                                                 <div class="tab-pane fade" id="nav-tab-bank">
+                                                    <form>
                                                     <div class="row em12">
                                                         <p class="center">กรุณากรอกข้อมูลสำหรับการจ่ายเงินด้วย MovieCard</p>
+                                                        
                                                         <div class="col-lg-12 center">
                                                             <input type="text" class="form-control" name="cardNumber1" placeholder="รหัสหน้าบัตร 16 หลัก" required=""  pattern="[0-9]{16}"> 
                                                             <p class="marup10"></p>
@@ -157,14 +159,15 @@
                                                         </div>
                                                     </div>
                                                     <button class="subscribe btn btn-primary btn-block lastbuttom height shadow_2" type="submit" data-target="#exampleModal1" data-toggle="modal">Confirm</button>
+                                                    </form>
+                                                    </form><!--end form-->
                                                 </div>
-
                                             </div><!-- end  carditCard form-->
                                         </div><!-- end  row-->
                                     </div>  <!-- close 8 col -->
                                 </div><!-- end  row-->
                             </div><!-- end  container creditcard-->
-                        </form><!--end form-->
+                        
                     </div><!--end all buy ticket -->
 
 
