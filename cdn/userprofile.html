@@ -1,0 +1,377 @@
+<html>
+<head>
+
+</head>
+
+<link rel="stylesheet" type="text/css" href="usercss.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+
+
+    <nav class="navbar navbar-light bg-main-white">
+        <a style="color: #f9f9f9; font-size: 5px;" class="navbar-brand hidden" href="#">Navbar</a>
+    </nav>
+    <div id="nav-bar">
+        <nav style="margin-top: -5px; position: fixed; width:100%;" class="navbar navbar-expand-sm navbar-light bg-main-white sticky-top p-verticalfull shadow-down pt-3">
+            <a class="navbar-brand ml-2 logo" href="#"><b>Cineario</b></a>
+            <button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav" style="margin-right: auto;margin-left: auto;">
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="#movies-list" data-scroll="movies-list">ภาพยนตร์</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1em;">
+                        <a class="nav-link" href="#">โรงภาพยนตร์</a>
+                    </li>
+                </ul>
+                <a @click.prevent="openPopup" style="font-size: 12px" id="sign-up" class="nav-item my-2 link text-md-right" onclick="document.getElementById('sign-in').style.display='block'" href="#">
+                    <span v-if="sign_display === 'Sign-in/Sign-up'">
+                    <i style="color:#191919!important" class="fas fa-sign-in-alt"></i>
+                </span>
+                    <span v-else>
+                    <i style="color:#191919!important" class="fas fa-user"></i>
+                </span> {{ sign_display }}</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Login -->
+
+    <div id="sign-in" class="modal">
+
+        <form class="modal-content animate">
+            <!-- <div class="modal-content animate"> -->
+            <div class="logocontainer">
+                <span v-on:click="setDefault" class="close" title="Close Modal">&times;</span>
+                <!-- <div class="avatar logo">Cineario</div> -->
+                <img style="width: 350px; padding-top: 55px;" src="img/logo.png" alt="">
+            </div>
+
+            <div class="container">
+                <div class="text-center">
+                    <span v-if="signed">
+                        <button @click.prevent="logout" class="btn btn-primary justify-content-center px-4" type="submit">Log out</button>
+                    </span>
+                    <span v-else>
+                        <input class="" :class="{ 'red-holder': uname }" v-model="username" type="text" placeholder="Username" id="uname" required>
+    
+                        <input class="" :class="{ 'red-holder': psw }" v-model="password" type="password" placeholder="Password" id="psw" required><br>
+                        <span v-if="signup">
+                            <input class="" :class="{ 'red-holder': conpsw }" v-model="confirmpass" type="password"  placeholder="Confirm Password" id="conpsw"required><br>
+                        </span>
+
+                    <div class="lower-part">
+                        <span v-if="!signup">
+                                <button @click.prevent="setSignDisplay"style="float: left;" class="btn btn-primary justify-content-left px-4" type="submit">Sign-in</button>
+                                <label style="float: right;" class="justify-content-end">
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me <br>
+                                        <span><a @click.prevent="signup = !signup;
+                                            uname = false
+                                            psw = false
+                                            conpsw = false" href="#">Sign-up</a></span>
+                        </label>
+                        </span>
+                        <span v-else>
+                                <button @click.prevent="checkDisplay" class="btn btn-primary justify-content-center px-4" type="submit">Sign-up</button>
+                            </span>
+                    </div>
+                    </span>
+                </div>
+            </div>
+
+            <!-- </div> -->
+        </form>
+    </div>
+    <!-- end login -->
+
+
+
+
+    
+<div class="container" style="border-radius:9px">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="panel rounded shadow">
+                <div class="panel-body">
+                    <div class="inner-all">
+                        <ul class="list-unstyled">
+                            <li class="text-center">
+                                <img data-no-retina="" class="img-circle img-responsive img-bordered-primary shadow_2" 
+                                style="margin-top: 20px;width: 200px;" src="https://image.flaticon.com/icons/svg/236/236831.svg" alt="John Doe">
+                            </li>
+                            <li class="text-center">
+                                <h4 class="text-capitalize" style="margin-top: 10px;">MY PROFILE</h4>
+                                
+                                
+                            </li>
+                            <li>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                            <div class="col-9 btn-group-vertical btn-block" style="text-align: center;">
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"> Edit Profile </button>
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"> Payment</button>
+                                                    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;margin-bottom: 30px;">Logout</button>
+                                            </div>
+                                         <div class="col-1"></div>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /.panel -->
+    
+
+    
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8"  style="margin-top: 30px;">
+        <!-- start card -->
+
+        <div class="profile-cover">
+
+                <h1 style="text-align: center;margin-bottom: 40px">HISTORY</h1>
+        
+        <div class="row">
+            <div class="col-md-12" style="z-index: 1">
+                    <div>
+                            <div class="imgshadow" style="width:100%;height: 200px;background: url('https://i.imgur.com/HSWdqv6.jpg') center/cover;z-index: 0;"></div>
+                            <div style="position: relative;margin-top:-220px;z-index: 9;">
+                                <div class="container bg-white" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.25);border-radius: 1em;">
+                                        <div class="row p-4">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-7 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <h3>Friend Zone โปรดระวังสิ้นสุดทางเพื่อน</h3>
+                                                        <h5 class="mb-3">CINEMA 11 | Central Pinklaw Cinema</h5>
+                                                        <p><i class="fas fa-volume-up"></i> TH  /  ENG</ps>
+                                                    </div>
+                                                    <div class="col-md-2"><img src="https://f.ptcdn.info/519/062/000/pn125sisdvjpVS10SAC-o.jpg" width="100%"></div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                        <center>
+                                                            <p>Date</p>
+                                                            <h5>29 May 2018</h5>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                        <center>
+                                                            <p>Time</p>
+                                                            <h5>13 : 30</h5>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <center>
+                                                            <p>Seat on</p>
+                                                            <h5>F5</h5>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                                <br><br>
+                                                <div class="status" style="margin-top: -15px;">Payment Success</div>
+                                            </div>
+                                        <div class="col-md-3 p-5">
+                                            <h4><center>SEAT PRICE : 180 BAHT</center></h4><br>
+                                            <img src="https://i.imgur.com/V3hMAWd.png" width="100%"><br><br>
+                                            <h3><center>WMGP25A3T</center></h3>
+                                        </div>
+                                    <div class="col-md-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+        </div>
+
+        <div class="container">
+            <div class="row"> 
+            <div class="col-7"></div>
+            <div class="col-2">
+                <button  type="button" class="btn btn-danger" style="width: 100%;height: 50px; margin-top: -20px;z-index: 99;position: relative;">REFUND</button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-success" style="width: 100%; height: 50px;margin-top: -20px;z-index: 99;position: relative;">PRINT</button>
+            </div>
+            <div class="col-1"></div>
+            </div>
+
+
+                
+<!-- end card  -->
+
+
+        <div class="profile-cover" style="margin-top: 30px; ">
+
+                <h1 style="text-align: center;margin-bottom: 60px"></h1>
+        
+        <div class="row">
+            <div class="col-md-12" style="z-index: 1">
+                    <div>
+                            <div class="imgshadow" style="width:100%;height: 200px;background: url('https://image.flaticon.com/icons/svg/236/236831.svg') center/cover;z-index: 0;"></div>
+                            <div style="position: relative;margin-top:-220px;z-index: 9;">
+                                <div class="container bg-white" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.25);border-radius: 1em;">
+                                        <div class="row p-4">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-7 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <h3>Friend Zone โปรดระวังสิ้นสุดทางเพื่อน</h3>
+                                                        <h5 class="mb-3">CINEMA 11 | Central Pinklaw Cinema</h5>
+                                                        <p><i class="fas fa-volume-up"></i> TH  /  ENG</ps>
+                                                    </div>
+                                                    <div class="col-md-2"><img src="https://f.ptcdn.info/519/062/000/pn125sisdvjpVS10SAC-o.jpg" width="100%"></div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                        <center>
+                                                            <p>Date</p>
+                                                            <h5>29 May 2018</h5>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+                                                        <center>
+                                                            <p>Time</p>
+                                                            <h5>13 : 30</h5>
+                                                        </center>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <center>
+                                                            <p>Seat on</p>
+                                                            <h5>F5</h5>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                                <br><br>
+                                                <div class="status" style="margin-top: -15px;">Payment Success</div>
+                                            </div>
+                                        <div class="col-md-3 p-5">
+                                            <h4><center>SEAT PRICE : 180 BAHT</center></h4><br>
+                                            <img src="https://i.imgur.com/V3hMAWd.png" width="100%"><br><br>
+                                            <h3><center>WMGP25A3T</center></h3>
+                                        </div>
+                                    <div class="col-md-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+
+
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+        </div>
+
+        <div class="container" style="margin-bottom: 50px;">
+            <div class="row"> 
+            <div class="col-7"></div>
+            <div class="col-2">
+                <button  type="button" class="btn btn-danger" style="width: 100%;height: 50px; margin-top: -20px;z-index: 99;position: relative;">REFUND</button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-success" style="width: 100%; height: 50px;margin-top: -20px;z-index: 99;position: relative;">PRINT</button>
+            </div>
+            <div class="col-1"></div>
+            </div>
+        </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- footer -->
+    <footer class="footer mt-auto ">
+        <div class=" p-sidefull container-fluid ">
+            <div class="footer bg-main-white ">
+                <div class="row">
+                    <div class=" col-md-4 p-5 ">
+                        <div class="footer-logo d-flex justify-content-between logo">Cineario</div>
+                    </div>
+                    <div class="col-md-4 p-5 text-center ">
+                        <div class="row social-media d-flex justify-content-center ">
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-instagram link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-facebook-square link-reverse "></i></a>
+                            </div>
+                            <div class="col-md-2 ">
+                                <a href="# "><i class="fab fa-twitter link-reverse "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 pt-4 pb-5 px-5 ">
+                        <div class="row d-flex justify-content-end social-media ">
+                            Cineario Cineplex
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">Contact our support</a>
+                        </div>
+                        <div class="row d-flex justify-content-end link ">
+                            <a href="#">About us</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+<style>
+    
+.shadow_2{
+	border-radius:5px; 
+  	box-shadow:1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+
+.status{
+  background: #00d830c2;
+  color: #fff;
+  width: 100%;
+  padding: .5em;
+  border-radius: .3em;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+
+
+</style>
+</body>
+
+</html>
